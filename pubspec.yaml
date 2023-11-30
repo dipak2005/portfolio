@@ -1,0 +1,70 @@
+name: portfolio
+description: A new Flutter project.
+publish_to: 'none'
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+
+  cupertino_icons: ^1.0.2
+  google_fonts: ^6.1.0
+  web_browser: ^0.7.4
+  responsive_builder: ^0.7.0
+  responsive_framework: ^1.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^2.0.0
+
+
+flutter:
+
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+     - family: Alice
+       fonts:
+         - asset: assets/fonts/Alice-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+#     - family: PlayfairDisplay
+#       fonts:
+#         - asset: assets/fonts/ PlayfairDisplay-Black.ttf
+#         - asset: assets/fonts/ PlayfairDisplay-Blackitalic.ttf
+#         - asset: assets/fonts/ PlayfairDisplay-Bold.ttf
+#         - asset: assets/fonts/ PlayfairDisplay-Bolditalic.ttf
+#         - asset: assets/fonts/ PlayfairDisplay-italic.ttf
+#         - asset: assets/fonts/ PlayfairDisplay-Regular.ttf
+
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
