@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -408,12 +410,38 @@ class _WebviewState extends State<Webview> {
                         ],
                       ),
                     ),
-                    Align(
-                      alignment: Alignment.center,
-                      child: CircleAvatar(
-                        radius: 300,
-                        backgroundColor: Colors.yellow,
-                      ),
+                    Stack(
+                      children: [
+                        Align(
+                          alignment: Alignment.center,
+                          child: CircleAvatar(
+                            radius: 300,
+                            backgroundColor: Colors.yellow,
+                          ),
+                        ),
+                        Positioned(
+                          left: 40,
+                          bottom: 250,
+                          width: 390,
+                          child: Transform.rotate(
+                            angle: 250,
+                            child: Container(
+                              height: MediaQuery.sizeOf(context).height * 0.5,
+                              width: MediaQuery.sizeOf(context).width * 0.4,
+                              decoration:
+                                  BoxDecoration(color: Color(0xff131313)),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 240,
+                          right: 198,
+                          child: CircleAvatar(
+                            radius: 140,
+                            backgroundColor: Colors.black,
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       width: MediaQuery.sizeOf(context).width * 0.1,
@@ -1336,24 +1364,930 @@ class _WebviewState extends State<Webview> {
               ),
             ),
             Container(
-              height: MediaQuery.sizeOf(context).height * 1,
+              height: MediaQuery.sizeOf(context).height * 1.1,
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
                 Color(0xff070707),
                 Color(0xff080807),
                 Color(0xff101208),
               ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
-              child: Row(
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Column(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    // mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text("My Skills",style: TextStyle(color: Colors.grey,),)
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "My Skills",
+                            style: TextStyle(color: Colors.grey, fontSize: 20),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Let's Explore",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 35),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Skills & Explore",
+                            style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.yellow),
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Text(
+                            "Sed ut perspiciatis unde omnis iste natus to voluptatem \n\n accusantium doloremque laudantium, totam rem aperiamc\n\n eaque ipsa quae ab illo inventore veritati",
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                          SizedBox(
+                            height: 35,
+                          ),
+                          ElevatedButton(
+                            style: ButtonStyle(
+                                shape: MaterialStatePropertyAll(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20))),
+                                backgroundColor:
+                                    MaterialStatePropertyAll(Colors.yellow),
+                                fixedSize:
+                                    MaterialStatePropertyAll(Size(200, 50))),
+                            onPressed: () {},
+                            child: Text(
+                              "Learn More      >",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: MediaQuery.sizeOf(context).width * 0.07,
+                      ),
+                      Container(
+                        height: MediaQuery.sizeOf(context).height * 0.3,
+                        width: MediaQuery.sizeOf(context).width * 0.12,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xff1F1F1F),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.asset(
+                              "assets/images/figma.png",
+                              height: 100,
+                              width: 50,
+                            ),
+                            // SizedBox(height: 10,),
+                            Text(
+                              "Figma",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 25),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStatePropertyAll(Colors.black),
+                                fixedSize:
+                                    MaterialStatePropertyAll(Size(150, 50)),
+                                shape: MaterialStatePropertyAll(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                ),
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                "95%",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 25),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.sizeOf(context).width * 0.01,
+                      ),
+                      Container(
+                        height: MediaQuery.sizeOf(context).height * 0.3,
+                        width: MediaQuery.sizeOf(context).width * 0.12,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Color(0xff1F1F1F)),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.asset(
+                              "assets/images/f.png",
+                              height: 100,
+                              width: 50,
+                            ),
+                            // SizedBox(height: 10,),
+                            Text(
+                              "Flutter",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 25),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStatePropertyAll(Colors.black),
+                                fixedSize:
+                                    MaterialStatePropertyAll(Size(150, 50)),
+                                shape: MaterialStatePropertyAll(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                ),
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                "99%",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 25),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.sizeOf(context).width * 0.01,
+                      ),
+                      Container(
+                        height: MediaQuery.sizeOf(context).height * 0.3,
+                        width: MediaQuery.sizeOf(context).width * 0.12,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Color(0xff1F1F1F)),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.asset(
+                              "assets/images/flow.png",
+                              height: 100,
+                              width: 50,
+                            ),
+                            // SizedBox(height: 10,),
+                            Text(
+                              "Flutter Flow",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 25),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStatePropertyAll(Colors.black),
+                                fixedSize:
+                                    MaterialStatePropertyAll(Size(150, 50)),
+                                shape: MaterialStatePropertyAll(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                ),
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                "95%",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 25),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.sizeOf(context).width * 0.01,
+                      ),
+                      Container(
+                        height: MediaQuery.sizeOf(context).height * 0.3,
+                        width: MediaQuery.sizeOf(context).width * 0.12,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xff1F1F1F),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.asset(
+                              "assets/images/php.png",
+                              height: 100,
+                              width: 50,
+                            ),
+                            // SizedBox(height: 10,),
+                            Text(
+                              "Figma",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 25),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStatePropertyAll(Colors.black),
+                                fixedSize:
+                                    MaterialStatePropertyAll(Size(150, 50)),
+                                shape: MaterialStatePropertyAll(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                ),
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                "95%",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 25),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
-                  )
+                  ),
+                  Align(
+                    alignment: Alignment(0.63, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Container(
+                          height: MediaQuery.sizeOf(context).height * 0.3,
+                          width: MediaQuery.sizeOf(context).width * 0.12,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Color(0xff1F1F1F)),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.asset(
+                                "assets/images/w.png",
+                                height: 100,
+                                width: 50,
+                              ),
+                              // SizedBox(height: 10,),
+                              Text(
+                                "Wordpress",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 25),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStatePropertyAll(Colors.black),
+                                  fixedSize:
+                                      MaterialStatePropertyAll(Size(150, 50)),
+                                  shape: MaterialStatePropertyAll(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: Text(
+                                  "80%",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 25),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.sizeOf(context).width * 0.01,
+                        ),
+                        Container(
+                          height: MediaQuery.sizeOf(context).height * 0.3,
+                          width: MediaQuery.sizeOf(context).width * 0.12,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Color(0xff1F1F1F)),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.asset(
+                                "assets/images/c.png",
+                                height: 100,
+                                width: 50,
+                              ),
+                              // SizedBox(height: 10,),
+                              Text(
+                                "c Programing",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 25),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStatePropertyAll(Colors.black),
+                                  fixedSize:
+                                      MaterialStatePropertyAll(Size(150, 50)),
+                                  shape: MaterialStatePropertyAll(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: Text(
+                                  "95%",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 25),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.sizeOf(context).width * 0.01,
+                        ),
+                        Container(
+                          height: MediaQuery.sizeOf(context).height * 0.3,
+                          width: MediaQuery.sizeOf(context).width * 0.12,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Color(0xff1F1F1F)),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.asset(
+                                "assets/images/cpp.png",
+                                height: 100,
+                                width: 50,
+                              ),
+                              // SizedBox(height: 10,),
+                              Text(
+                                "c++",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 25),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStatePropertyAll(Colors.black),
+                                  fixedSize:
+                                      MaterialStatePropertyAll(Size(150, 50)),
+                                  shape: MaterialStatePropertyAll(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: Text(
+                                  "95%",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 25),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.sizeOf(context).width * 0.01,
+                        ),
+                        Container(
+                          height: MediaQuery.sizeOf(context).height * 0.3,
+                          width: MediaQuery.sizeOf(context).width * 0.12,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Color(0xff1F1F1F)),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.asset(
+                                "assets/images/ps.png",
+                                height: 100,
+                                width: 50,
+                              ),
+                              // SizedBox(height: 10,),
+                              Text(
+                                "Photoshop",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 25),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStatePropertyAll(Colors.black),
+                                  fixedSize:
+                                      MaterialStatePropertyAll(Size(150, 50)),
+                                  shape: MaterialStatePropertyAll(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: Text(
+                                  "90%",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 25),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
+            Container(
+              height: MediaQuery.sizeOf(context).height * 3.1,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 100,
+                  ),
+                  Text(
+                    "Latest Works",
+                    style: TextStyle(color: Colors.grey, fontSize: 20),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Explore My Popular",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 35,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        TextSpan(
+                          text: " Projects",
+                          style: TextStyle(
+                              color: Colors.yellow,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 35),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        height: MediaQuery.sizeOf(context).height * 0.6,
+                        width: MediaQuery.sizeOf(context).width * 0.3,
+                        decoration: BoxDecoration(color: Colors.yellow),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.sizeOf(context).width * 0.1,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "App Development",
+                            style: TextStyle(
+                                color: Colors.yellow, letterSpacing: 1),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Mobile Application",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                letterSpacing: 1,
+                                fontSize: 35),
+                          ),
+                          Text(
+                            "Development",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                letterSpacing: 1,
+                                fontSize: 35),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Sed ut perspiciatis unde omnin natus totam rem aperiam\n eaque inventore veritatis...",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_circle_right_sharp,
+                              size: 50,
+                              color: Color(0xff1F1F1F),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "App Development",
+                            style: TextStyle(
+                                color: Colors.yellow, letterSpacing: 1),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Mobile Application",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                letterSpacing: 1,
+                                fontSize: 35),
+                          ),
+                          Text(
+                            "Development",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                letterSpacing: 1,
+                                fontSize: 35),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Sed ut perspiciatis unde omnin natus totam rem aperiam\n eaque inventore veritatis...",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_circle_right_sharp,
+                              size: 50,
+                              color: Color(0xff1F1F1F),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: MediaQuery.sizeOf(context).width * 0.1,
+                      ),
+                      Container(
+                        height: MediaQuery.sizeOf(context).height * 0.6,
+                        width: MediaQuery.sizeOf(context).width * 0.3,
+                        decoration: BoxDecoration(color: Colors.yellow),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        height: MediaQuery.sizeOf(context).height * 0.6,
+                        width: MediaQuery.sizeOf(context).width * 0.3,
+                        decoration: BoxDecoration(color: Colors.yellow),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.sizeOf(context).width * 0.1,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "App Development",
+                            style: TextStyle(
+                                color: Colors.yellow, letterSpacing: 1),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Mobile Application",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                letterSpacing: 1,
+                                fontSize: 35),
+                          ),
+                          Text(
+                            "Development",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                letterSpacing: 1,
+                                fontSize: 35),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Sed ut perspiciatis unde omnin natus totam rem aperiam\n eaque inventore veritatis...",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_circle_right_sharp,
+                              size: 50,
+                              color: Color(0xff1F1F1F),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "App Development",
+                            style: TextStyle(
+                                color: Colors.yellow, letterSpacing: 1),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Mobile Application",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                letterSpacing: 1,
+                                fontSize: 35),
+                          ),
+                          Text(
+                            "Development",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                                letterSpacing: 1,
+                                fontSize: 35),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Sed ut perspiciatis unde omnin natus totam rem aperiam\n eaque inventore veritatis...",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_circle_right_sharp,
+                              size: 50,
+                              color: Color(0xff1F1F1F),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: MediaQuery.sizeOf(context).width * 0.1,
+                      ),
+                      Container(
+                        height: MediaQuery.sizeOf(context).height * 0.6,
+                        width: MediaQuery.sizeOf(context).width * 0.3,
+                        decoration: BoxDecoration(color: Colors.yellow),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(Colors.yellow),
+                      fixedSize: MaterialStatePropertyAll(Size(200, 50)),
+                      shape: MaterialStatePropertyAll(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      "View More Projects   >",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: MediaQuery.sizeOf(context).height * 0.8,
+              decoration: BoxDecoration(
+                color: Colors.black,
+              ),
+              child: Center(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Clients Testimonials",
+                          style: TextStyle(
+                            color: Colors.grey,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                          "I've 1500+ Clients",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 35,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        Text(
+                          "Feedback",
+                          style: TextStyle(
+                              color: Colors.yellow,
+                              fontSize: 35,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          "Sed ut perspiciatis unde omnin natus total\n\n rem aperiam eaque inventore veritatis",
+                          style: TextStyle(
+                            color: Colors.grey,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Row(
+                          children: [
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_circle_left_sharp,
+                                color: Color(0xff1F1F1F),
+                                size: 50,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_circle_right_sharp,
+                                color: Color(0xff1F1F1F),
+                                size: 50,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: MediaQuery.sizeOf(context).width * 0.03,
+                    ),
+                    Container(
+                      height: MediaQuery.sizeOf(context).height * 0.7,
+                      width: MediaQuery.sizeOf(context).width * 0.3,
+                      decoration: BoxDecoration(
+                        color: Color(0xff131313),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Stack(
+                            children: [
+                              CircleAvatar(
+                                radius: 60,
+                              ),
+                              Positioned(
+
+                                top: 0,
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.arrow_circle_right_sharp,color: Colors.yellow),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 40,),
+                          Text("Nice",)
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Container(
+                      height: MediaQuery.sizeOf(context).height * 0.7,
+                      width: MediaQuery.sizeOf(context).width * 0.3,
+                      decoration: BoxDecoration(
+                        color: Color(0xff131313),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
