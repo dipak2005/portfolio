@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/drawer/talk.dart';
 
 class Webview extends StatefulWidget {
   const Webview({super.key});
@@ -9,6 +10,9 @@ class Webview extends StatefulWidget {
   @override
   State<Webview> createState() => _WebviewState();
 }
+
+bool ishover = false;
+bool istexthover = false;
 
 class _WebviewState extends State<Webview> {
   @override
@@ -81,34 +85,18 @@ class _WebviewState extends State<Webview> {
                     width: MediaQuery.sizeOf(context).width * 0.15,
                   ),
                   DropdownButton(
-                    elevation: 2,
-                    alignment: Alignment(0, -0.3),
                     icon: Icon(
                       Icons.arrow_drop_down,
                       color: Colors.yellow,
                     ),
-
                     menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    // dropdownColor: Colors.transparent,
+                    dropdownColor: Colors.transparent,
+                    underline: SizedBox(),
                     items: [
                       DropdownMenuItem(
-                        onTap: () {
-                          DropdownButton(
-                            elevation: 2,
-                            alignment: Alignment(0, -0.3),
-                            icon: Icon(
-                              Icons.arrow_drop_down,
-                              color: Colors.yellow,
-                            ),
-                            isDense: true,
-                            menuMaxHeight:
-                                MediaQuery.sizeOf(context).height * 0.2,
-                            items: [],
-                            onChanged: (value) {},
-                          );
-                        },
+                        onTap: () {},
                         child: Text(
-                          "Multi page",
+                          "Multi page    >",
                           style: TextStyle(color: Colors.yellow),
                         ),
                         value: 0,
@@ -126,48 +114,35 @@ class _WebviewState extends State<Webview> {
                       style: TextStyle(color: Colors.yellow),
                     ),
                     onChanged: (value) {},
-                    //   value: dropdown,
                   ),
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width * 0.01,
                   ),
                   TextButton(
+                    onHover: (value) {
+                      ishover = value;
+                      istexthover = value;
+                      setState(() {});
+                    },
                     onPressed: () {},
                     child: Text(
                       "About",
-                      style: TextStyle(color: Colors.yellow),
+                      style: TextStyle(
+                          color: istexthover ? Colors.yellow : Colors.white),
                     ),
                   ),
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width * 0.01,
                   ),
                   DropdownButton(
-                    elevation: 2,
-                    alignment: Alignment(0, -0.3),
                     icon: Icon(
                       Icons.arrow_drop_down,
                       color: Colors.yellow,
                     ),
-                    isDense: true,
+                    dropdownColor: Colors.transparent,
                     menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    // dropdownColor: Colors.transparent,
                     items: [
                       DropdownMenuItem(
-                        onTap: () {
-                          DropdownButton(
-                            elevation: 2,
-                            alignment: Alignment(0, -0.3),
-                            icon: Icon(
-                              Icons.arrow_drop_down,
-                              color: Colors.yellow,
-                            ),
-                            isDense: true,
-                            menuMaxHeight:
-                                MediaQuery.sizeOf(context).height * 0.2,
-                            items: [],
-                            onChanged: (value) {},
-                          );
-                        },
                         child: Text(
                           "Service one",
                           style: TextStyle(color: Colors.yellow),
@@ -196,38 +171,22 @@ class _WebviewState extends State<Webview> {
                     ),
                     focusColor: Colors.transparent,
                     onChanged: (value) {},
-                    //   value: dropdown,
+                    underline: SizedBox(),
                   ),
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width * 0.02,
                   ),
                   DropdownButton(
-                    elevation: 2,
-                    alignment: Alignment(0, -0.3),
+                    underline: SizedBox(),
                     icon: Icon(
                       Icons.arrow_drop_down,
                       color: Colors.yellow,
                     ),
                     isDense: true,
                     menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    // dropdownColor: Colors.transparent,
+                    dropdownColor: Colors.transparent,
                     items: [
                       DropdownMenuItem(
-                        onTap: () {
-                          DropdownButton(
-                            elevation: 2,
-                            alignment: Alignment(0, -0.3),
-                            icon: Icon(
-                              Icons.arrow_drop_down,
-                              color: Colors.yellow,
-                            ),
-                            isDense: true,
-                            menuMaxHeight:
-                                MediaQuery.sizeOf(context).height * 0.2,
-                            items: [],
-                            onChanged: (value) {},
-                          );
-                        },
                         child: Text(
                           "Protfolio 1",
                           style: TextStyle(color: Colors.yellow),
@@ -261,21 +220,18 @@ class _WebviewState extends State<Webview> {
                       style: TextStyle(color: Colors.yellow),
                     ),
                     onChanged: (value) {},
-                    //   value: dropdown,
                   ),
                   SizedBox(
                     width: 20,
                   ),
                   DropdownButton(
-                    elevation: 2,
-                    alignment: Alignment(0, -0.3),
                     icon: Icon(
                       Icons.arrow_drop_down,
                       color: Colors.yellow,
                     ),
-
+                    underline: SizedBox(),
                     menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    // dropdownColor: Colors.transparent,
+                    dropdownColor: Colors.transparent,
                     items: [
                       DropdownMenuItem(
                         onTap: () {},
@@ -305,9 +261,15 @@ class _WebviewState extends State<Webview> {
                   ),
                   TextButton(
                       onPressed: () {},
+                      onHover: (value) {
+                        ishover = value;
+                        istexthover = value;
+                        setState(() {});
+                      },
                       child: Text(
                         "Contact",
-                        style: TextStyle(color: Colors.yellow),
+                        style: TextStyle(
+                            color: istexthover ? Colors.yellow : Colors.white),
                       )),
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width * 0.1,
@@ -319,8 +281,12 @@ class _WebviewState extends State<Webview> {
                       style: TextStyle(color: Colors.white70),
                     ),
                   ),
-                  CircleAvatar(
-                    backgroundColor: Color(0xffC9F31D),
+                  InkWell(
+                    onTap: () => Talk(),
+                    child: CircleAvatar(
+                      backgroundColor: Color(0xffC9F31D),
+                      child: Icon(Icons.menu, color: Colors.black, size: 30),
+                    ),
                   )
                 ],
               ),
@@ -382,11 +348,24 @@ class _WebviewState extends State<Webview> {
                                               borderRadius:
                                                   BorderRadius.circular(10))),
                                       backgroundColor: MaterialStatePropertyAll(
-                                          Colors.yellow)),
-                                  onPressed: () {},
+                                          ishover
+                                              ? Colors.black
+                                              : Colors.yellow)),
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, "Contact");
+                                  },
+                                  onHover: (value) {
+                                    ishover = value;
+                                    istexthover = value;
+
+                                    setState(() {});
+                                  },
                                   child: Text(
                                     "Hire Me",
-                                    style: TextStyle(color: Colors.black),
+                                    style: TextStyle(
+                                        color: istexthover
+                                            ? Colors.white
+                                            : Colors.black),
                                   )),
                               TextButton(
                                 onPressed: () {},
@@ -461,7 +440,7 @@ class _WebviewState extends State<Webview> {
                           Align(
                             alignment: Alignment.center,
                             child: Text(
-                              "13+",
+                              "Trained\n Fresher",
                               style: TextStyle(
                                   color: Colors.yellow,
                                   fontSize: 50,
@@ -479,7 +458,7 @@ class _WebviewState extends State<Webview> {
                             height: 30,
                           ),
                           Text(
-                            "8K+",
+                            "7+",
                             style: TextStyle(
                                 color: Colors.yellow,
                                 fontWeight: FontWeight.w700,
@@ -1118,7 +1097,7 @@ class _WebviewState extends State<Webview> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  "01         Web Development",
+                                  "02       Web Development",
                                   style: TextStyle(
                                       fontSize: 30,
                                       color: Colors.white,
@@ -1173,7 +1152,7 @@ class _WebviewState extends State<Webview> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  "01         Game Development",
+                                  "03         Game Development",
                                   style: TextStyle(
                                       fontSize: 30,
                                       color: Colors.white,
@@ -1223,7 +1202,7 @@ class _WebviewState extends State<Webview> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  "01         Figma Development",
+                                  "04         Figma Development",
                                   style: TextStyle(
                                       fontSize: 30,
                                       color: Colors.white,
@@ -1278,7 +1257,7 @@ class _WebviewState extends State<Webview> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  "01         C++ Development",
+                                  "05         C++ Development",
                                   style: TextStyle(
                                       fontSize: 30,
                                       color: Colors.white,
@@ -1328,7 +1307,7 @@ class _WebviewState extends State<Webview> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  "01         Python Development",
+                                  "06         Python Development",
                                   style: TextStyle(
                                       fontSize: 30,
                                       color: Colors.white,
@@ -1907,7 +1886,9 @@ class _WebviewState extends State<Webview> {
                       Container(
                         height: MediaQuery.sizeOf(context).height * 0.6,
                         width: MediaQuery.sizeOf(context).width * 0.3,
-                        decoration: BoxDecoration(color: Colors.yellow),
+                        decoration: BoxDecoration(color: Colors.transparent),
+                        child: Image.asset("assets/images/n1.png",
+                            fit: BoxFit.fitHeight),
                       ),
                       SizedBox(
                         width: MediaQuery.sizeOf(context).width * 0.1,
@@ -1924,15 +1905,7 @@ class _WebviewState extends State<Webview> {
                             height: 20,
                           ),
                           Text(
-                            "Mobile Application",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                                letterSpacing: 1,
-                                fontSize: 35),
-                          ),
-                          Text(
-                            "Development",
+                            "Nike Ecommerce App",
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
@@ -1978,7 +1951,7 @@ class _WebviewState extends State<Webview> {
                             height: 20,
                           ),
                           Text(
-                            "Mobile Application",
+                            "Food Mart",
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
@@ -1986,7 +1959,7 @@ class _WebviewState extends State<Webview> {
                                 fontSize: 35),
                           ),
                           Text(
-                            "Development",
+                            "Oline food Delivery",
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
@@ -2018,7 +1991,9 @@ class _WebviewState extends State<Webview> {
                       Container(
                         height: MediaQuery.sizeOf(context).height * 0.6,
                         width: MediaQuery.sizeOf(context).width * 0.3,
-                        decoration: BoxDecoration(color: Colors.yellow),
+                        decoration: BoxDecoration(color: Colors.transparent),
+                        child: Image.asset("assets/images/app.png",
+                            fit: BoxFit.fitHeight),
                       ),
                     ],
                   ),
@@ -2031,7 +2006,11 @@ class _WebviewState extends State<Webview> {
                       Container(
                         height: MediaQuery.sizeOf(context).height * 0.6,
                         width: MediaQuery.sizeOf(context).width * 0.3,
-                        decoration: BoxDecoration(color: Colors.yellow),
+                        decoration: BoxDecoration(color: Colors.transparent),
+                        child: Image.asset(
+                          "assets/images/invoice.png",
+                          fit: BoxFit.fitHeight,
+                        ),
                       ),
                       SizedBox(
                         width: MediaQuery.sizeOf(context).width * 0.1,
@@ -2048,15 +2027,7 @@ class _WebviewState extends State<Webview> {
                             height: 20,
                           ),
                           Text(
-                            "Mobile Application",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                                letterSpacing: 1,
-                                fontSize: 35),
-                          ),
-                          Text(
-                            "Development",
+                            "Invoice Genretor",
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
@@ -2102,7 +2073,7 @@ class _WebviewState extends State<Webview> {
                             height: 20,
                           ),
                           Text(
-                            "Mobile Application",
+                            "Resume Builder",
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
@@ -2110,7 +2081,7 @@ class _WebviewState extends State<Webview> {
                                 fontSize: 35),
                           ),
                           Text(
-                            "Development",
+                            "For more Peoples",
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
@@ -2142,7 +2113,10 @@ class _WebviewState extends State<Webview> {
                       Container(
                         height: MediaQuery.sizeOf(context).height * 0.6,
                         width: MediaQuery.sizeOf(context).width * 0.3,
-                        decoration: BoxDecoration(color: Colors.yellow),
+                        decoration: BoxDecoration(color: Colors.transparent),
+                        child: Image.asset(
+                          "assets/images/r.png",
+                        ),
                       ),
                     ],
                   ),
@@ -2259,17 +2233,22 @@ class _WebviewState extends State<Webview> {
                                 radius: 60,
                               ),
                               Positioned(
-
                                 top: 0,
                                 child: IconButton(
                                   onPressed: () {},
-                                  icon: Icon(Icons.arrow_circle_right_sharp,color: Colors.yellow),
+                                  icon: Icon(Icons.arrow_circle_right_sharp,
+                                      color: Colors.yellow),
                                 ),
                               ),
                             ],
                           ),
-                          SizedBox(height: 40,),
-                          Text("Nice",)
+                          SizedBox(
+                            height: 40,
+                          ),
+                          Text(
+                            "Nice",
+                            style: TextStyle(color: Colors.white),
+                          )
                         ],
                       ),
                     ),
@@ -2282,6 +2261,33 @@ class _WebviewState extends State<Webview> {
                       decoration: BoxDecoration(
                         color: Color(0xff131313),
                         borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Stack(
+                            children: [
+                              CircleAvatar(
+                                radius: 60,
+                              ),
+                              Positioned(
+                                top: 0,
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.arrow_circle_right_sharp,
+                                      color: Colors.yellow),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 40,
+                          ),
+                          Text(
+                            "Nice",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
                       ),
                     ),
                   ],

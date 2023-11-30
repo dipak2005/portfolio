@@ -1,1 +1,1 @@
-const String Mobile="/Mobile";
+const Mobile="/Mobile";

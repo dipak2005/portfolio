@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/screens/contact.dart';
 import 'package:portfolio/screens/mobileview.dart';
 import 'package:portfolio/screens/portfolio.dart';
 import 'package:portfolio/screens/watch.dart';
@@ -26,7 +27,7 @@ class _MywebState extends State<Myweb> {
         "Mobile":(context) => Mobile(),
         "Tablet":(context) => Table(),
         "Watch":(context) => Watch(),
-
+        "Contact":(context) => Contact(),
       },
     );
   }
