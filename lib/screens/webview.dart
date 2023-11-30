@@ -1343,6 +1343,16 @@ class _WebviewState extends State<Webview> {
                 Color(0xff080807),
                 Color(0xff101208),
               ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Column(
+                    children: [
+                      Text("My Skills",style: TextStyle(color: Colors.grey,),)
+                    ],
+                  )
+                ],
+              ),
             ),
           ],
         ),
