@@ -1,8 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/drawer/talk.dart';
+import 'dart:ui_web';
+
+import 'package:portfolio/variables/hover.dart';
 
 class Webview extends StatefulWidget {
   const Webview({super.key});
@@ -68,7 +69,7 @@ class _WebviewState extends State<Webview> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.asset(
-                    "assets/images/f.png",
+                    "assets/images/appicon.png",
                     height: MediaQuery.sizeOf(context).height * 0.07,
                     width: MediaQuery.sizeOf(context).width * 0.1,
                   ),
@@ -111,24 +112,26 @@ class _WebviewState extends State<Webview> {
                     ],
                     hint: Text(
                       "Home",
-                      style: TextStyle(color: Colors.yellow),
+
+                      style: TextStyle(color:home?Colors.yellow: Colors.white),
                     ),
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                    },
                   ),
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width * 0.01,
                   ),
                   TextButton(
                     onHover: (value) {
-                      ishover = value;
-                      istexthover = value;
+                      about = value;
+
                       setState(() {});
                     },
                     onPressed: () {},
                     child: Text(
                       "About",
                       style: TextStyle(
-                          color: istexthover ? Colors.yellow : Colors.white),
+                          color: about ? Colors.yellow : Colors.white),
                     ),
                   ),
                   SizedBox(
@@ -262,14 +265,14 @@ class _WebviewState extends State<Webview> {
                   TextButton(
                       onPressed: () {},
                       onHover: (value) {
-                        ishover = value;
-                        istexthover = value;
+                     contact=value;
                         setState(() {});
                       },
                       child: Text(
                         "Contact",
                         style: TextStyle(
-                            color: istexthover ? Colors.yellow : Colors.white),
+                            color:
+                                contact ? Colors.yellow : Colors.white),
                       )),
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width * 0.1,
@@ -297,202 +300,198 @@ class _WebviewState extends State<Webview> {
             Container(
               decoration: BoxDecoration(color: Color(0xff131313)),
               height: MediaQuery.sizeOf(context).height * 0.7,
-              child: Expanded(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Align(
-                      alignment: Alignment(-0.8, 0),
-                      child: Column(
-                        children: [
-                          Text(
-                            "Hello , i'm",
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 40,
-                                fontWeight: FontWeight.w600),
-                          ),
-                          Text(
-                            "Dipak k. Thakur",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 50,
-                              color: Colors.yellow,
-                            ),
-                          ),
-                          Text(
-                            "Flutter Developer",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 50,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          SizedBox(
-                            height: MediaQuery.sizeOf(context).height * 0.1,
-                          ),
-                          Text(
-                            "We denouce  with righteous indignation dislike demoralized by\n the charms  of pleasure",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                color: Colors.grey),
-                          ),
-                          SizedBox(
-                            height: MediaQuery.sizeOf(context).height * 0.01,
-                          ),
-                          Row(
-                            children: [
-                              ElevatedButton(
-                                  style: ButtonStyle(
-                                      shape: MaterialStatePropertyAll(
-                                          RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10))),
-                                      backgroundColor: MaterialStatePropertyAll(
-                                          ishover
-                                              ? Colors.black
-                                              : Colors.yellow)),
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, "Contact");
-                                  },
-                                  onHover: (value) {
-                                    ishover = value;
-                                    istexthover = value;
-
-                                    setState(() {});
-                                  },
-                                  child: Text(
-                                    "Hire Me",
-                                    style: TextStyle(
-                                        color: istexthover
-                                            ? Colors.white
-                                            : Colors.black),
-                                  )),
-                              TextButton(
-                                onPressed: () {},
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      "Download Resume",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios,
-                                      color: Colors.yellow,
-                                      size: 15,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    Stack(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Align(
+                    alignment: Alignment(-0.8, 0),
+                    child: Column(
                       children: [
-                        Align(
-                          alignment: Alignment.center,
-                          child: CircleAvatar(
-                            radius: 300,
-                            backgroundColor: Colors.yellow,
+                        Text(
+                          "Hello , i'm",
+                          style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 40,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          "Dipak  Thakur",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 50,
+                            color: Colors.yellow,
                           ),
                         ),
-                        Positioned(
-                          left: 40,
-                          bottom: 250,
-                          width: 390,
-                          child: Transform.rotate(
-                            angle: 250,
-                            child: Container(
-                              height: MediaQuery.sizeOf(context).height * 0.5,
-                              width: MediaQuery.sizeOf(context).width * 0.4,
-                              decoration:
-                                  BoxDecoration(color: Color(0xff131313)),
+                        Text(
+                          "Flutter Developer",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 50,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.sizeOf(context).height * 0.1,
+                        ),
+                        Text(
+                          "We denouce  with righteous indignation dislike demoralized by\n the charms  of pleasure",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600, color: Colors.grey),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.sizeOf(context).height * 0.01,
+                        ),
+                        Row(
+                          children: [
+                            ElevatedButton(
+                                style: ButtonStyle(
+                                    shape: MaterialStatePropertyAll(
+                                        RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10))),
+                                    backgroundColor: MaterialStatePropertyAll(
+                                        hire
+                                            ? Colors.black
+                                            : Colors.yellow)),
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "Contact");
+                                },
+                                onHover: (value) {
+
+                                  hire = value;
+
+                                  setState(() {});
+                                },
+                                child: Text(
+                                  "Hire Me",
+                                  style: TextStyle(
+                                      color: hire
+                                          ? Colors.white
+                                          : Colors.black),
+                                )),
+                            TextButton(
+                              onPressed: () {},
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "Download Resume",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 15),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.yellow,
+                                    size: 15,
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 240,
-                          right: 198,
-                          child: CircleAvatar(
-                            radius: 140,
-                            backgroundColor: Colors.black,
-                          ),
-                        ),
+                          ],
+                        )
                       ],
                     ),
-                    SizedBox(
-                      width: MediaQuery.sizeOf(context).width * 0.1,
-                    ),
-                    Container(
-                      height: MediaQuery.sizeOf(context).height * 0.6,
-                      width: MediaQuery.sizeOf(context).width * 0.2,
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Column(
-                        // crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: 20,
+                  ),
+                  Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child: CircleAvatar(
+                          radius: 300,
+                          backgroundColor: Colors.yellow,
+                        ),
+                      ),
+                      Positioned(
+                        left: 40,
+                        bottom: 250,
+                        width: 390,
+                        child: Transform.rotate(
+                          angle: 250,
+                          child: Container(
+                            height: MediaQuery.sizeOf(context).height * 0.5,
+                            width: MediaQuery.sizeOf(context).width * 0.4,
+                            decoration: BoxDecoration(color: Color(0xff131313)),
                           ),
-                          Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              "Trained\n Fresher",
-                              style: TextStyle(
-                                  color: Colors.yellow,
-                                  fontSize: 50,
-                                  fontWeight: FontWeight.w700),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "Years of Experience",
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Text(
-                            "7+",
-                            style: TextStyle(
-                                color: Colors.yellow,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 50),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "Project Complete",
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Text(
-                            "99%",
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 240,
+                        right: 198,
+                        child: CircleAvatar(
+                          radius: 140,
+                          backgroundColor: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: MediaQuery.sizeOf(context).width * 0.1,
+                  ),
+                  Container(
+                    height: MediaQuery.sizeOf(context).height * 0.6,
+                    width: MediaQuery.sizeOf(context).width * 0.2,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      // crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "Trained\n Fresher",
                             style: TextStyle(
                                 color: Colors.yellow,
                                 fontSize: 50,
                                 fontWeight: FontWeight.w700),
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "Client Satisfaction",
-                            style: TextStyle(color: Colors.grey),
-                          )
-                        ],
-                      ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Years of Experience",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                          "7+",
+                          style: TextStyle(
+                              color: Colors.yellow,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 50),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Project Complete",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                          "99%",
+                          style: TextStyle(
+                              color: Colors.yellow,
+                              fontSize: 50,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Client Satisfaction",
+                          style: TextStyle(color: Colors.grey),
+                        )
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             SizedBox(
@@ -717,7 +716,7 @@ class _WebviewState extends State<Webview> {
                         radius: 150,
                         backgroundColor: Color(0xff1F1F1F),
                         backgroundImage: AssetImage(
-                          "assets/images/f.png",
+                          "assets/images/appicon.png",
                         ),
                       ),
                       SizedBox(
@@ -739,15 +738,15 @@ class _WebviewState extends State<Webview> {
                           Text.rich(
                             TextSpan(
                               children: [
+                                // TextSpan(
+                                //   text: "Real",
+                                //   style: TextStyle(
+                                //       color: Colors.white,
+                                //       fontWeight: FontWeight.w700,
+                                //       fontSize: 35),
+                                // ),
                                 TextSpan(
-                                  text: "Real",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 35),
-                                ),
-                                TextSpan(
-                                    text: " Problem Solutions",
+                                    text: " Trained",
                                     style: TextStyle(
                                         color: Colors.yellow,
                                         fontSize: 30,
@@ -759,7 +758,7 @@ class _WebviewState extends State<Webview> {
                             height: 20,
                           ),
                           Text(
-                            "Experience",
+                            "Flutter Developer",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
@@ -785,6 +784,7 @@ class _WebviewState extends State<Webview> {
                                   children: [
                                     Row(children: [
                                       IconButton(
+                                        hoverColor: Colors.yellow,
                                         onPressed: () {},
                                         icon: Icon(
                                           Icons.arrow_circle_right_sharp,
@@ -795,7 +795,7 @@ class _WebviewState extends State<Webview> {
                                       Column(
                                         children: [
                                           Text(
-                                            "2023- Present",
+                                            "2024- Present",
                                             style:
                                                 TextStyle(color: Colors.white),
                                           ),
@@ -838,7 +838,7 @@ class _WebviewState extends State<Webview> {
                                         Column(
                                           children: [
                                             Text(
-                                              "2023- Present",
+                                              "2024- Present",
                                               style: TextStyle(
                                                   color: Colors.white),
                                             ),
@@ -886,7 +886,7 @@ class _WebviewState extends State<Webview> {
                                       Column(
                                         children: [
                                           Text(
-                                            "2023- Present",
+                                            "2024- Present",
                                             style:
                                                 TextStyle(color: Colors.white),
                                           ),
@@ -929,7 +929,7 @@ class _WebviewState extends State<Webview> {
                                         Column(
                                           children: [
                                             Text(
-                                              "2023- Present",
+                                              "2024- Present",
                                               style: TextStyle(
                                                   color: Colors.white),
                                             ),
@@ -1237,108 +1237,108 @@ class _WebviewState extends State<Webview> {
                   SizedBox(
                     height: 25,
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Container(
-                        height: MediaQuery.sizeOf(context).height * 0.15,
-                        width: MediaQuery.sizeOf(context).width * 0.4,
-                        decoration: BoxDecoration(
-                          color: Color(0xff1F1F1F),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          // crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  "05         C++ Development",
-                                  style: TextStyle(
-                                      fontSize: 30,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  "         Faster Faster Flutter Master",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.grey),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              width: MediaQuery.sizeOf(context).width * 0.1,
-                            ),
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.arrow_circle_right_sharp,
-                                  color: Colors.black,
-                                  size: 35,
-                                ))
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.sizeOf(context).width * 0.03,
-                      ),
-                      Container(
-                        height: MediaQuery.sizeOf(context).height * 0.15,
-                        width: MediaQuery.sizeOf(context).width * 0.4,
-                        decoration: BoxDecoration(
-                          color: Color(0xff1F1F1F),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          // crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  "06         Python Development",
-                                  style: TextStyle(
-                                      fontSize: 30,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  "         Faster Faster Flutter Master",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.grey),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              width: MediaQuery.sizeOf(context).width * 0.1,
-                            ),
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.arrow_circle_right_sharp,
-                                  color: Colors.black,
-                                  size: 35,
-                                ))
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   mainAxisSize: MainAxisSize.min,
+                  //   children: [
+                  //     Container(
+                  //       height: MediaQuery.sizeOf(context).height * 0.15,
+                  //       width: MediaQuery.sizeOf(context).width * 0.4,
+                  //       decoration: BoxDecoration(
+                  //         color: Color(0xff1F1F1F),
+                  //         borderRadius: BorderRadius.circular(15),
+                  //       ),
+                  //       child: Row(
+                  //         mainAxisSize: MainAxisSize.min,
+                  //         // crossAxisAlignment: CrossAxisAlignment.center,
+                  //         mainAxisAlignment: MainAxisAlignment.center,
+                  //         children: [
+                  //           Column(
+                  //             crossAxisAlignment: CrossAxisAlignment.center,
+                  //             mainAxisSize: MainAxisSize.min,
+                  //             children: [
+                  //               Text(
+                  //                 "05         C++ Development",
+                  //                 style: TextStyle(
+                  //                     fontSize: 30,
+                  //                     color: Colors.white,
+                  //                     fontWeight: FontWeight.w700),
+                  //               ),
+                  //               SizedBox(
+                  //                 height: 20,
+                  //               ),
+                  //               Text(
+                  //                 "         Faster Faster Flutter Master",
+                  //                 style: TextStyle(
+                  //                     fontWeight: FontWeight.w700,
+                  //                     color: Colors.grey),
+                  //               )
+                  //             ],
+                  //           ),
+                  //           SizedBox(
+                  //             width: MediaQuery.sizeOf(context).width * 0.1,
+                  //           ),
+                  //           IconButton(
+                  //               onPressed: () {},
+                  //               icon: Icon(
+                  //                 Icons.arrow_circle_right_sharp,
+                  //                 color: Colors.black,
+                  //                 size: 35,
+                  //               ))
+                  //         ],
+                  //       ),
+                  //     ),
+                  //     SizedBox(
+                  //       width: MediaQuery.sizeOf(context).width * 0.03,
+                  //     ),
+                  //     Container(
+                  //       height: MediaQuery.sizeOf(context).height * 0.15,
+                  //       width: MediaQuery.sizeOf(context).width * 0.4,
+                  //       decoration: BoxDecoration(
+                  //         color: Color(0xff1F1F1F),
+                  //         borderRadius: BorderRadius.circular(15),
+                  //       ),
+                  //       child: Row(
+                  //         mainAxisSize: MainAxisSize.min,
+                  //         // crossAxisAlignment: CrossAxisAlignment.center,
+                  //         mainAxisAlignment: MainAxisAlignment.center,
+                  //         children: [
+                  //           Column(
+                  //             crossAxisAlignment: CrossAxisAlignment.center,
+                  //             mainAxisSize: MainAxisSize.min,
+                  //             children: [
+                  //               Text(
+                  //                 "06         Python Development",
+                  //                 style: TextStyle(
+                  //                     fontSize: 30,
+                  //                     color: Colors.white,
+                  //                     fontWeight: FontWeight.w700),
+                  //               ),
+                  //               SizedBox(
+                  //                 height: 20,
+                  //               ),
+                  //               Text(
+                  //                 "         Faster Faster Flutter Master",
+                  //                 style: TextStyle(
+                  //                     fontWeight: FontWeight.w700,
+                  //                     color: Colors.grey),
+                  //               )
+                  //             ],
+                  //           ),
+                  //           SizedBox(
+                  //             width: MediaQuery.sizeOf(context).width * 0.1,
+                  //           ),
+                  //           IconButton(
+                  //               onPressed: () {},
+                  //               icon: Icon(
+                  //                 Icons.arrow_circle_right_sharp,
+                  //                 color: Colors.black,
+                  //                 size: 35,
+                  //               ))
+                  //         ],
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                 ],
               ),
             ),
@@ -1398,19 +1398,26 @@ class _WebviewState extends State<Webview> {
                             height: 35,
                           ),
                           ElevatedButton(
+                            onHover: (value) {
+                              ishover = value;
+                              setState(() {});
+                            },
                             style: ButtonStyle(
                                 shape: MaterialStatePropertyAll(
                                     RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(20))),
-                                backgroundColor:
-                                    MaterialStatePropertyAll(Colors.yellow),
+                                backgroundColor: MaterialStatePropertyAll(
+                                    ishover ? Colors.black : Colors.yellow),
                                 fixedSize:
                                     MaterialStatePropertyAll(Size(200, 50))),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, "Skill");
+                            },
                             child: Text(
                               "Learn More      >",
-                              style: TextStyle(color: Colors.black),
+                              style: TextStyle(
+                                  color: ishover ? Colors.white : Colors.black),
                             ),
                           ),
                         ],
@@ -1418,54 +1425,79 @@ class _WebviewState extends State<Webview> {
                       SizedBox(
                         width: MediaQuery.sizeOf(context).width * 0.07,
                       ),
-                      Container(
-                        height: MediaQuery.sizeOf(context).height * 0.3,
-                        width: MediaQuery.sizeOf(context).width * 0.12,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Color(0xff1F1F1F),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Image.asset(
-                              "assets/images/figma.png",
-                              height: 100,
-                              width: 50,
-                            ),
-                            // SizedBox(height: 10,),
-                            Text(
-                              "Figma",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 25),
-                            ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStatePropertyAll(Colors.black),
-                                fixedSize:
-                                    MaterialStatePropertyAll(Size(150, 50)),
-                                shape: MaterialStatePropertyAll(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                ),
+                      InkWell(
+                        highlightColor: Colors.yellow,
+                        hoverColor: Colors.yellow,
+                        // autofocus: true,
+                        // canRequestFocus: true,
+                        customBorder: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        mouseCursor: MaterialStateMouseCursor.clickable,
+                        onTap: () => Navigator.pushNamed(context, "Skill"),
+                        onHover: (value) {
+                          ishover = value;
+                          setState(() {});
+                        },
+                        child: Container(
+                          height: MediaQuery.sizeOf(context).height * 0.3,
+                          width: MediaQuery.sizeOf(context).width * 0.12,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                                color: ishover
+                                    ? Colors.yellow
+                                    : Colors.transparent),
+                            color: Color(0xff1F1F1F),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.asset(
+                                "assets/images/figma.png",
+                                height: 100,
+                                width: 50,
                               ),
-                              onPressed: () {},
-                              child: Text(
-                                "95%",
+                              // SizedBox(height: 10,),
+                              Text(
+                                "Figma",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w700,
                                     fontSize: 25),
                               ),
-                            ),
-                          ],
+                              SizedBox(
+                                height: 30,
+                              ),
+                              ElevatedButton(
+                                onHover: (value) {
+                                  ishover = value;
+                                  setState(() {});
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStatePropertyAll(
+                                      ishover ? Colors.yellow : Colors.black),
+                                  fixedSize:
+                                      MaterialStatePropertyAll(Size(150, 50)),
+                                  shape: MaterialStatePropertyAll(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "Skill");
+                                },
+                                child: Text(
+                                  "95%",
+                                  style: TextStyle(
+                                      color:
+                                          ishover ? Colors.black : Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 25),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -1481,7 +1513,7 @@ class _WebviewState extends State<Webview> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Image.asset(
-                              "assets/images/f.png",
+                              "assets/images/appicon.png",
                               height: 100,
                               width: 50,
                             ),
@@ -1508,7 +1540,9 @@ class _WebviewState extends State<Webview> {
                                   ),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, "Skill");
+                              },
                               child: Text(
                                 "99%",
                                 style: TextStyle(
@@ -1560,7 +1594,9 @@ class _WebviewState extends State<Webview> {
                                   ),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, "Skill");
+                              },
                               child: Text(
                                 "95%",
                                 style: TextStyle(
@@ -1613,7 +1649,9 @@ class _WebviewState extends State<Webview> {
                                   ),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, "Skill");
+                              },
                               child: Text(
                                 "95%",
                                 style: TextStyle(
@@ -1669,7 +1707,9 @@ class _WebviewState extends State<Webview> {
                                     ),
                                   ),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "Skill");
+                                },
                                 child: Text(
                                   "80%",
                                   style: TextStyle(
@@ -1721,7 +1761,9 @@ class _WebviewState extends State<Webview> {
                                     ),
                                   ),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "Skill");
+                                },
                                 child: Text(
                                   "95%",
                                   style: TextStyle(
@@ -1773,7 +1815,9 @@ class _WebviewState extends State<Webview> {
                                     ),
                                   ),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "Skill");
+                                },
                                 child: Text(
                                   "95%",
                                   style: TextStyle(
@@ -1825,7 +1869,9 @@ class _WebviewState extends State<Webview> {
                                     ),
                                   ),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "Skill");
+                                },
                                 child: Text(
                                   "90%",
                                   style: TextStyle(
@@ -1922,6 +1968,9 @@ class _WebviewState extends State<Webview> {
                             ),
                           ),
                           IconButton(
+                            hoverColor: Colors.yellow,
+                            highlightColor: Colors.red,
+                            splashRadius: 30,
                             onPressed: () {},
                             icon: Icon(
                               Icons.arrow_circle_right_sharp,
@@ -2008,7 +2057,7 @@ class _WebviewState extends State<Webview> {
                         width: MediaQuery.sizeOf(context).width * 0.3,
                         decoration: BoxDecoration(color: Colors.transparent),
                         child: Image.asset(
-                          "assets/images/invoice.png",
+                          "assets/images/eco.png",
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -2027,7 +2076,7 @@ class _WebviewState extends State<Webview> {
                             height: 20,
                           ),
                           Text(
-                            "Invoice Genretor",
+                            "E-Mart",
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
@@ -2038,7 +2087,7 @@ class _WebviewState extends State<Webview> {
                             height: 20,
                           ),
                           Text(
-                            "Sed ut perspiciatis unde omnin natus totam rem aperiam\n eaque inventore veritatis...",
+                            "So Let's Go And Shop Now",
                             style: TextStyle(
                               color: Colors.white,
                             ),
@@ -2133,7 +2182,9 @@ class _WebviewState extends State<Webview> {
                         ),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, "Projects");
+                    },
                     child: Text(
                       "View More Projects   >",
                       style: TextStyle(color: Colors.black),

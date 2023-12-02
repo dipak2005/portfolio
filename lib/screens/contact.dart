@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/screens/class.dart';
 import 'package:portfolio/screens/webview.dart';
 
 import '../drawer/talk.dart';
@@ -12,7 +14,19 @@ class Contact extends StatefulWidget {
 }
 
 class _ContactState extends State<Contact> {
+  bool isval=false;
+  GlobalKey<FormState> gkey= GlobalKey<FormState>();
+  TextEditingController name=TextEditingController();
+  TextEditingController phone=TextEditingController();
+  TextEditingController email=TextEditingController();
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    name.text=user.name??"";
+    email.text=user.email??"";
+    phone.text=user.password??"";
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff131313),
@@ -59,13 +73,14 @@ class _ContactState extends State<Contact> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.1,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.asset(
-                    "assets/images/f.png",
+                    "assets/images/appicon.png",
                     height: MediaQuery.sizeOf(context).height * 0.07,
                     width: MediaQuery.sizeOf(context).width * 0.1,
                   ),
@@ -422,7 +437,15 @@ class _ContactState extends State<Contact> {
                                         MediaQuery.sizeOf(context).width * 0.15,
                                     child: Padding(
                                       padding: const EdgeInsets.all(18.0),
-                                      child: TextFormField(
+                                      child: TextFormField(scrollPadding: EdgeInsets.symmetric(horizontal: 30),
+                                        controller: name,
+                                        validator: (value) {
+                                         if(value?.isEmpty??true){
+                                           return "* Please Enter Your Name";
+                                         }else{
+                                           return null;
+                                         }
+                                        },
                                         decoration: InputDecoration(
                                             hintText: "Your name",
                                             focusColor: Colors.yellow,
@@ -448,6 +471,16 @@ class _ContactState extends State<Contact> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(18.0),
                                       child: TextFormField(
+                                        controller: email,
+                                        validator: (value) {
+                                          if(value?.isEmpty??true){
+                                            return "* Enter Your Email";
+                                          }else if(value?.contains("@gmail.com")??true){
+                                            return null;
+                                          }else{
+                                            return "* Invalied Email";
+                                          }
+                                        },
                                         decoration: InputDecoration(
                                             hintText: "Your Email",
                                             focusColor: Colors.yellow,
@@ -506,6 +539,17 @@ class _ContactState extends State<Contact> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(18.0),
                                       child: TextFormField(
+                                        controller: phone,
+                                        validator: (value) {
+                                          var val=int.tryParse(value!);
+                                          if(value?.isEmpty??true){
+                                            return "* Enter your Phone Number";
+                                          }else if(value != 10){
+                                            return "* Invalied Phone Number";
+                                          }else{
+                                            return null;
+                                          }
+                                        },
                                         decoration: InputDecoration(
                                             hintText: "+91 0000000000",
                                             focusColor: Colors.yellow,
@@ -595,7 +639,12 @@ class _ContactState extends State<Contact> {
                                     ),
                                   ),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  bool isval=gkey.currentState?.validate()??true;
+                                  if(isval){
+
+                                  }
+                                },
                                 child: Text(
                                   "Send us Message",
                                   style: TextStyle(
