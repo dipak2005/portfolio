@@ -5,6 +5,8 @@ import 'dart:ui_web';
 
 import 'package:portfolio/variables/hover.dart';
 
+import '../widgets/container.dart';
+
 class Webview extends StatefulWidget {
   const Webview({super.key});
 
@@ -63,237 +65,7 @@ class _WebviewState extends State<Webview> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: MediaQuery.sizeOf(context).height * 0.1,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Image.asset(
-                    "assets/images/appicon.png",
-                    height: MediaQuery.sizeOf(context).height * 0.07,
-                    width: MediaQuery.sizeOf(context).width * 0.1,
-                  ),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Portfolio",
-                        style: TextStyle(
-                            color: Colors.yellow,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 30),
-                      )),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.15,
-                  ),
-                  DropdownButton(
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.yellow,
-                    ),
-                    menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    dropdownColor: Colors.transparent,
-                    underline: SizedBox(),
-                    items: [
-                      DropdownMenuItem(
-                        onTap: () {},
-                        child: Text(
-                          "Multi page    >",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 0,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "one page",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 1,
-                      ),
-                    ],
-                    hint: Text(
-                      "Home",
-
-                      style: TextStyle(color:home?Colors.yellow: Colors.white),
-                    ),
-                    onChanged: (value) {
-                    },
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.01,
-                  ),
-                  TextButton(
-                    onHover: (value) {
-                      about = value;
-
-                      setState(() {});
-                    },
-                    onPressed: () {},
-                    child: Text(
-                      "About",
-                      style: TextStyle(
-                          color: about ? Colors.yellow : Colors.white),
-                    ),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.01,
-                  ),
-                  DropdownButton(
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.yellow,
-                    ),
-                    dropdownColor: Colors.transparent,
-                    menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    items: [
-                      DropdownMenuItem(
-                        child: Text(
-                          "Service one",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 0,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Service Two",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 1,
-                      ),
-                      DropdownMenuItem(
-                        enabled: true,
-                        child: Text(
-                          "Service Three",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 2,
-                      )
-                    ],
-                    hint: Text(
-                      "Services",
-                      style: TextStyle(color: Colors.yellow),
-                    ),
-                    focusColor: Colors.transparent,
-                    onChanged: (value) {},
-                    underline: SizedBox(),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.02,
-                  ),
-                  DropdownButton(
-                    underline: SizedBox(),
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.yellow,
-                    ),
-                    isDense: true,
-                    menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    dropdownColor: Colors.transparent,
-                    items: [
-                      DropdownMenuItem(
-                        child: Text(
-                          "Protfolio 1",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 0,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Portfolio 2",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 1,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Portfolio 3",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 2,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Portfolio 4",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 3,
-                      )
-                    ],
-                    hint: Text(
-                      "Portfolio",
-                      style: TextStyle(color: Colors.yellow),
-                    ),
-                    onChanged: (value) {},
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  DropdownButton(
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.yellow,
-                    ),
-                    underline: SizedBox(),
-                    menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    dropdownColor: Colors.transparent,
-                    items: [
-                      DropdownMenuItem(
-                        onTap: () {},
-                        child: Text(
-                          "Blog Standard",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 0,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Blog Details",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 1,
-                      ),
-                    ],
-                    hint: Text(
-                      "Blog",
-                      style: TextStyle(color: Colors.yellow),
-                    ),
-                    onChanged: (value) {},
-                    //   value: dropdown,
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.02,
-                  ),
-                  TextButton(
-                      onPressed: () {},
-                      onHover: (value) {
-                     contact=value;
-                        setState(() {});
-                      },
-                      child: Text(
-                        "Contact",
-                        style: TextStyle(
-                            color:
-                                contact ? Colors.yellow : Colors.white),
-                      )),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.1,
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Let's Talk",
-                      style: TextStyle(color: Colors.white70),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () => Talk(),
-                    child: CircleAvatar(
-                      backgroundColor: Color(0xffC9F31D),
-                      child: Icon(Icons.menu, color: Colors.black, size: 30),
-                    ),
-                  )
-                ],
-              ),
-            ),
+            Commencontainer(),
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.18,
             ),
@@ -349,14 +121,11 @@ class _WebviewState extends State<Webview> {
                                             borderRadius:
                                                 BorderRadius.circular(10))),
                                     backgroundColor: MaterialStatePropertyAll(
-                                        hire
-                                            ? Colors.black
-                                            : Colors.yellow)),
+                                        hire ? Colors.black : Colors.yellow)),
                                 onPressed: () {
                                   Navigator.pushNamed(context, "Contact");
                                 },
                                 onHover: (value) {
-
                                   hire = value;
 
                                   setState(() {});
@@ -364,9 +133,8 @@ class _WebviewState extends State<Webview> {
                                 child: Text(
                                   "Hire Me",
                                   style: TextStyle(
-                                      color: hire
-                                          ? Colors.white
-                                          : Colors.black),
+                                      color:
+                                          hire ? Colors.white : Colors.black),
                                 )),
                             TextButton(
                               onPressed: () {},
@@ -399,27 +167,6 @@ class _WebviewState extends State<Webview> {
                           backgroundColor: Colors.yellow,
                         ),
                       ),
-                      Positioned(
-                        left: 40,
-                        bottom: 250,
-                        width: 390,
-                        child: Transform.rotate(
-                          angle: 250,
-                          child: Container(
-                            height: MediaQuery.sizeOf(context).height * 0.5,
-                            width: MediaQuery.sizeOf(context).width * 0.4,
-                            decoration: BoxDecoration(color: Color(0xff131313)),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 240,
-                        right: 198,
-                        child: CircleAvatar(
-                          radius: 140,
-                          backgroundColor: Colors.black,
-                        ),
-                      ),
                     ],
                   ),
                   SizedBox(
@@ -432,7 +179,6 @@ class _WebviewState extends State<Webview> {
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(20)),
                     child: Column(
-                      // crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
                           height: 20,
@@ -746,7 +492,7 @@ class _WebviewState extends State<Webview> {
                                 //       fontSize: 35),
                                 // ),
                                 TextSpan(
-                                    text: " Trained",
+                                    text: " Fresher",
                                     style: TextStyle(
                                         color: Colors.yellow,
                                         fontSize: 30,
@@ -783,13 +529,22 @@ class _WebviewState extends State<Webview> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Row(children: [
-                                      IconButton(
-                                        hoverColor: Colors.yellow,
-                                        onPressed: () {},
-                                        icon: Icon(
-                                          Icons.arrow_circle_right_sharp,
-                                          color: Colors.black,
-                                          size: 50,
+                                      InkWell(
+                                        onTap: () {},
+                                        onHover: (value) {
+                                          xarrow = value;
+                                          setState(() {});
+                                        },
+                                        child: CircleAvatar(
+                                          radius: 20,
+                                          backgroundColor: xarrow
+                                              ? Colors.yellow
+                                              : Colors.black,
+                                          child: Icon(
+                                              Icons.arrow_forward_outlined,
+                                              color: xarrow
+                                                  ? Colors.black
+                                                  : Colors.white),
                                         ),
                                       ),
                                       Column(
@@ -827,12 +582,22 @@ class _WebviewState extends State<Webview> {
                                     Row(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
-                                        IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.arrow_circle_right_sharp,
-                                            color: Colors.black,
-                                            size: 50,
+                                        InkWell(
+                                          onTap: () {},
+                                          onHover: (value) {
+                                            xarrow1 = value;
+                                            setState(() {});
+                                          },
+                                          child: CircleAvatar(
+                                            radius: 20,
+                                            backgroundColor: xarrow1
+                                                ? Colors.yellow
+                                                : Colors.black,
+                                            child: Icon(
+                                                Icons.arrow_forward_outlined,
+                                                color: xarrow1
+                                                    ? Colors.black
+                                                    : Colors.white),
                                           ),
                                         ),
                                         Column(
@@ -875,12 +640,22 @@ class _WebviewState extends State<Webview> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Row(children: [
-                                      IconButton(
-                                        onPressed: () {},
-                                        icon: Icon(
-                                          Icons.arrow_circle_right_sharp,
-                                          color: Colors.black,
-                                          size: 50,
+                                      InkWell(
+                                        onTap: () {},
+                                        onHover: (value) {
+                                          xarrow2 = value;
+                                          setState(() {});
+                                        },
+                                        child: CircleAvatar(
+                                          radius: 20,
+                                          backgroundColor: xarrow2
+                                              ? Colors.yellow
+                                              : Colors.black,
+                                          child: Icon(
+                                              Icons.arrow_forward_outlined,
+                                              color: xarrow2
+                                                  ? Colors.black
+                                                  : Colors.white),
                                         ),
                                       ),
                                       Column(
@@ -918,12 +693,22 @@ class _WebviewState extends State<Webview> {
                                     Row(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
-                                        IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.arrow_circle_right_sharp,
-                                            color: Colors.black,
-                                            size: 50,
+                                        InkWell(
+                                          onTap: () {},
+                                          onHover: (value) {
+                                            xarrow3 = value;
+                                            setState(() {});
+                                          },
+                                          child: CircleAvatar(
+                                            radius: 20,
+                                            backgroundColor: xarrow3
+                                                ? Colors.yellow
+                                                : Colors.black,
+                                            child: Icon(
+                                                Icons.arrow_forward_outlined,
+                                                color: xarrow3
+                                                    ? Colors.black
+                                                    : Colors.white),
                                           ),
                                         ),
                                         Column(
@@ -1030,101 +815,121 @@ class _WebviewState extends State<Webview> {
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Container(
-                        height: MediaQuery.sizeOf(context).height * 0.15,
-                        width: MediaQuery.sizeOf(context).width * 0.4,
-                        decoration: BoxDecoration(
-                          color: Color(0xff1F1F1F),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          // crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  "01         App Development",
-                                  style: TextStyle(
-                                      fontSize: 30,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  "         Faster Faster Flutter Master",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.grey),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              width: MediaQuery.sizeOf(context).width * 0.1,
-                            ),
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.arrow_circle_right_sharp,
-                                  color: Colors.black,
-                                  size: 35,
-                                ))
-                          ],
+                      InkWell(
+                        onTap: () {},
+                        onHover: (value) {
+                          arow1 = value;
+                          setState(() {});
+                        },
+                        child: Container(
+                          height: MediaQuery.sizeOf(context).height * 0.15,
+                          width: MediaQuery.sizeOf(context).width * 0.4,
+                          decoration: BoxDecoration(
+                            color: Color(0xff1F1F1F),
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(
+                                color:
+                                    arow1 ? Colors.yellow : Colors.transparent),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            // crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    "01         App Development",
+                                    style: TextStyle(
+                                        fontSize: 30,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    "         Faster Faster Flutter Master",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.grey),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                width: MediaQuery.sizeOf(context).width * 0.1,
+                              ),
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.arrow_circle_right_sharp,
+                                    color: arow1 ? Colors.yellow : Colors.black,
+                                    size: 35,
+                                  ))
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(
                         width: MediaQuery.sizeOf(context).width * 0.03,
                       ),
-                      Container(
-                        height: MediaQuery.sizeOf(context).height * 0.15,
-                        width: MediaQuery.sizeOf(context).width * 0.4,
-                        decoration: BoxDecoration(
-                          color: Color(0xff1F1F1F),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          // crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  "02       Web Development",
-                                  style: TextStyle(
-                                      fontSize: 30,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  "         Faster Faster Flutter Master",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.grey),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              width: MediaQuery.sizeOf(context).width * 0.1,
-                            ),
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.arrow_circle_right_sharp,
-                                  color: Colors.black,
-                                  size: 35,
-                                ))
-                          ],
+                      InkWell(
+                        onTap: () {},
+                        onHover: (value) {
+                          arow2 = value;
+                          setState(() {});
+                        },
+                        child: Container(
+                          height: MediaQuery.sizeOf(context).height * 0.15,
+                          width: MediaQuery.sizeOf(context).width * 0.4,
+                          decoration: BoxDecoration(
+                            color: Color(0xff1F1F1F),
+                            border: Border.all(
+                                color:
+                                    arow2 ? Colors.yellow : Colors.transparent),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            // crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    "02       Web Development",
+                                    style: TextStyle(
+                                        fontSize: 30,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    "         Faster Faster Flutter Master",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.grey),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                width: MediaQuery.sizeOf(context).width * 0.1,
+                              ),
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.arrow_circle_right_sharp,
+                                    color: arow2 ? Colors.yellow : Colors.black,
+                                    size: 35,
+                                  ))
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -1135,101 +940,121 @@ class _WebviewState extends State<Webview> {
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Container(
-                        height: MediaQuery.sizeOf(context).height * 0.15,
-                        width: MediaQuery.sizeOf(context).width * 0.4,
-                        decoration: BoxDecoration(
-                          color: Color(0xff1F1F1F),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          // crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  "03         Game Development",
-                                  style: TextStyle(
-                                      fontSize: 30,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  "         Faster Faster Flutter Master",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.grey),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              width: MediaQuery.sizeOf(context).width * 0.1,
-                            ),
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.arrow_circle_right_sharp,
-                                  color: Colors.black,
-                                  size: 35,
-                                ))
-                          ],
+                      InkWell(
+                        onTap: () {},
+                        onHover: (value) {
+                          arow3 = value;
+                          setState(() {});
+                        },
+                        child: Container(
+                          height: MediaQuery.sizeOf(context).height * 0.15,
+                          width: MediaQuery.sizeOf(context).width * 0.4,
+                          decoration: BoxDecoration(
+                            color: Color(0xff1F1F1F),
+                            border: Border.all(
+                                color:
+                                    arow3 ? Colors.yellow : Colors.transparent),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            // crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    "03         Game Development",
+                                    style: TextStyle(
+                                        fontSize: 30,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    "         Faster Faster Flutter Master",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.grey),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                width: MediaQuery.sizeOf(context).width * 0.1,
+                              ),
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.arrow_circle_right_sharp,
+                                    color: arow3 ? Colors.yellow : Colors.black,
+                                    size: 35,
+                                  ))
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(
                         width: MediaQuery.sizeOf(context).width * 0.03,
                       ),
-                      Container(
-                        height: MediaQuery.sizeOf(context).height * 0.15,
-                        width: MediaQuery.sizeOf(context).width * 0.4,
-                        decoration: BoxDecoration(
-                          color: Color(0xff1F1F1F),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          // crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  "04         Figma Development",
-                                  style: TextStyle(
-                                      fontSize: 30,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text(
-                                  "         Faster Faster Flutter Master",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.grey),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              width: MediaQuery.sizeOf(context).width * 0.1,
-                            ),
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.arrow_circle_right_sharp,
-                                  color: Colors.black,
-                                  size: 35,
-                                ))
-                          ],
+                      InkWell(
+                        onTap: () {},
+                        onHover: (value) {
+                          arow4 = value;
+                          setState(() {});
+                        },
+                        child: Container(
+                          height: MediaQuery.sizeOf(context).height * 0.15,
+                          width: MediaQuery.sizeOf(context).width * 0.4,
+                          decoration: BoxDecoration(
+                            color: Color(0xff1F1F1F),
+                            border: Border.all(
+                                color:
+                                    arow4 ? Colors.yellow : Colors.transparent),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            // crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    "04         Figma Development",
+                                    style: TextStyle(
+                                        fontSize: 30,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    "         Faster Faster Flutter Master",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.grey),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                width: MediaQuery.sizeOf(context).width * 0.1,
+                              ),
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.arrow_circle_right_sharp,
+                                    color: arow4 ? Colors.yellow : Colors.black,
+                                    size: 35,
+                                  ))
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -1399,7 +1224,7 @@ class _WebviewState extends State<Webview> {
                           ),
                           ElevatedButton(
                             onHover: (value) {
-                              ishover = value;
+                              home = value;
                               setState(() {});
                             },
                             style: ButtonStyle(
@@ -1408,7 +1233,7 @@ class _WebviewState extends State<Webview> {
                                         borderRadius:
                                             BorderRadius.circular(20))),
                                 backgroundColor: MaterialStatePropertyAll(
-                                    ishover ? Colors.black : Colors.yellow),
+                                    home ? Colors.black : Colors.yellow),
                                 fixedSize:
                                     MaterialStatePropertyAll(Size(200, 50))),
                             onPressed: () {
@@ -1417,7 +1242,7 @@ class _WebviewState extends State<Webview> {
                             child: Text(
                               "Learn More      >",
                               style: TextStyle(
-                                  color: ishover ? Colors.white : Colors.black),
+                                  color: home ? Colors.white : Colors.black),
                             ),
                           ),
                         ],
@@ -1426,13 +1251,6 @@ class _WebviewState extends State<Webview> {
                         width: MediaQuery.sizeOf(context).width * 0.07,
                       ),
                       InkWell(
-                        highlightColor: Colors.yellow,
-                        hoverColor: Colors.yellow,
-                        // autofocus: true,
-                        // canRequestFocus: true,
-                        customBorder: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        mouseCursor: MaterialStateMouseCursor.clickable,
                         onTap: () => Navigator.pushNamed(context, "Skill"),
                         onHover: (value) {
                           ishover = value;
@@ -1503,164 +1321,209 @@ class _WebviewState extends State<Webview> {
                       SizedBox(
                         width: MediaQuery.sizeOf(context).width * 0.01,
                       ),
-                      Container(
-                        height: MediaQuery.sizeOf(context).height * 0.3,
-                        width: MediaQuery.sizeOf(context).width * 0.12,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Color(0xff1F1F1F)),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Image.asset(
-                              "assets/images/appicon.png",
-                              height: 100,
-                              width: 50,
-                            ),
-                            // SizedBox(height: 10,),
-                            Text(
-                              "Flutter",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 25),
-                            ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStatePropertyAll(Colors.black),
-                                fixedSize:
-                                    MaterialStatePropertyAll(Size(150, 50)),
-                                shape: MaterialStatePropertyAll(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                ),
+                      InkWell(
+                        onTap: () => Navigator.pushNamed(context, "Skill"),
+                        onHover: (value) {
+                          flutter = value;
+                          setState(() {});
+                        },
+                        child: Container(
+                          height: MediaQuery.sizeOf(context).height * 0.3,
+                          width: MediaQuery.sizeOf(context).width * 0.12,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                  color: flutter
+                                      ? Colors.yellow
+                                      : Colors.transparent),
+                              color: Color(0xff1F1F1F)),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.asset(
+                                "assets/images/appicon.png",
+                                height: 100,
+                                width: 50,
                               ),
-                              onPressed: () {
-                                Navigator.pushNamed(context, "Skill");
-                              },
-                              child: Text(
-                                "99%",
+                              // SizedBox(height: 10,),
+                              Text(
+                                "Flutter",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w700,
                                     fontSize: 25),
                               ),
-                            ),
-                          ],
+                              SizedBox(
+                                height: 30,
+                              ),
+                              ElevatedButton(
+                                onHover: (value) {
+                                  flutter = value;
+                                  setState(() {});
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStatePropertyAll(
+                                      flutter ? Colors.yellow : Colors.black),
+                                  fixedSize:
+                                      MaterialStatePropertyAll(Size(150, 50)),
+                                  shape: MaterialStatePropertyAll(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "Skill");
+                                },
+                                child: Text(
+                                  "99%",
+                                  style: TextStyle(
+                                      color:
+                                          flutter ? Colors.black : Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 25),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(
                         width: MediaQuery.sizeOf(context).width * 0.01,
                       ),
-                      Container(
-                        height: MediaQuery.sizeOf(context).height * 0.3,
-                        width: MediaQuery.sizeOf(context).width * 0.12,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Color(0xff1F1F1F)),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Image.asset(
-                              "assets/images/flow.png",
-                              height: 100,
-                              width: 50,
-                            ),
-                            // SizedBox(height: 10,),
-                            Text(
-                              "Flutter Flow",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 25),
-                            ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStatePropertyAll(Colors.black),
-                                fixedSize:
-                                    MaterialStatePropertyAll(Size(150, 50)),
-                                shape: MaterialStatePropertyAll(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                ),
+                      InkWell(
+                        onTap: () => Navigator.pushNamed(context, "Skill"),
+                        onHover: (value) {
+                          flow = value;
+                          setState(() {});
+                        },
+                        child: Container(
+                          height: MediaQuery.sizeOf(context).height * 0.3,
+                          width: MediaQuery.sizeOf(context).width * 0.12,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                  color: flow
+                                      ? Colors.yellow
+                                      : Colors.transparent),
+                              color: Color(0xff1F1F1F)),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.asset(
+                                "assets/images/flow.png",
+                                height: 100,
+                                width: 50,
                               ),
-                              onPressed: () {
-                                Navigator.pushNamed(context, "Skill");
-                              },
-                              child: Text(
-                                "95%",
+                              // SizedBox(height: 10,),
+                              Text(
+                                "Flutter Flow",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w700,
                                     fontSize: 25),
                               ),
-                            ),
-                          ],
+                              SizedBox(
+                                height: 30,
+                              ),
+                              ElevatedButton(
+                                onHover: (value) {
+                                  flow = value;
+                                  setState(() {});
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStatePropertyAll(
+                                      flow ? Colors.yellow : Colors.black),
+                                  fixedSize:
+                                      MaterialStatePropertyAll(Size(150, 50)),
+                                  shape: MaterialStatePropertyAll(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "Skill");
+                                },
+                                child: Text(
+                                  "95%",
+                                  style: TextStyle(
+                                      color: flow ? Colors.black : Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 25),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(
                         width: MediaQuery.sizeOf(context).width * 0.01,
                       ),
-                      Container(
-                        height: MediaQuery.sizeOf(context).height * 0.3,
-                        width: MediaQuery.sizeOf(context).width * 0.12,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Color(0xff1F1F1F),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Image.asset(
-                              "assets/images/php.png",
-                              height: 100,
-                              width: 50,
-                            ),
-                            // SizedBox(height: 10,),
-                            Text(
-                              "Figma",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 25),
-                            ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStatePropertyAll(Colors.black),
-                                fixedSize:
-                                    MaterialStatePropertyAll(Size(150, 50)),
-                                shape: MaterialStatePropertyAll(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                ),
+                      InkWell(
+                        onTap: () => Navigator.pushNamed(context, "Skill"),
+                        onHover: (value) {
+                          php = value;
+                          setState(() {});
+                        },
+                        child: Container(
+                          height: MediaQuery.sizeOf(context).height * 0.3,
+                          width: MediaQuery.sizeOf(context).width * 0.12,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                color:
+                                    php ? Colors.yellow : Colors.transparent),
+                            borderRadius: BorderRadius.circular(20),
+                            color: Color(0xff1F1F1F),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.asset(
+                                "assets/images/php.png",
+                                height: 100,
+                                width: 50,
                               ),
-                              onPressed: () {
-                                Navigator.pushNamed(context, "Skill");
-                              },
-                              child: Text(
-                                "95%",
+                              // SizedBox(height: 10,),
+                              Text(
+                                "PhP",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w700,
                                     fontSize: 25),
                               ),
-                            ),
-                          ],
+                              SizedBox(
+                                height: 30,
+                              ),
+                              ElevatedButton(
+                                onHover: (value) {
+                                  php = value;
+                                  setState(() {});
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStatePropertyAll(
+                                      php ? Colors.yellow : Colors.black),
+                                  fixedSize:
+                                      MaterialStatePropertyAll(Size(150, 50)),
+                                  shape: MaterialStatePropertyAll(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "Skill");
+                                },
+                                child: Text(
+                                  "95%",
+                                  style: TextStyle(
+                                      color: php ? Colors.black : Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 25),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -1670,217 +1533,281 @@ class _WebviewState extends State<Webview> {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Container(
-                          height: MediaQuery.sizeOf(context).height * 0.3,
-                          width: MediaQuery.sizeOf(context).width * 0.12,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Color(0xff1F1F1F)),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.asset(
-                                "assets/images/w.png",
-                                height: 100,
-                                width: 50,
-                              ),
-                              // SizedBox(height: 10,),
-                              Text(
-                                "Wordpress",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 25),
-                              ),
-                              SizedBox(
-                                height: 30,
-                              ),
-                              ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStatePropertyAll(Colors.black),
-                                  fixedSize:
-                                      MaterialStatePropertyAll(Size(150, 50)),
-                                  shape: MaterialStatePropertyAll(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  ),
+                        InkWell(
+                          onTap: () => Navigator.pushNamed(context, "Skill"),
+                          onHover: (value) {
+                            wordpress = value;
+                            setState(() {});
+                          },
+                          child: Container(
+                            height: MediaQuery.sizeOf(context).height * 0.3,
+                            width: MediaQuery.sizeOf(context).width * 0.12,
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: wordpress
+                                        ? Colors.yellow
+                                        : Colors.transparent),
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color(0xff1F1F1F)),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Image.asset(
+                                  "assets/images/w.png",
+                                  height: 100,
+                                  width: 50,
                                 ),
-                                onPressed: () {
-                                  Navigator.pushNamed(context, "Skill");
-                                },
-                                child: Text(
-                                  "80%",
+                                // SizedBox(height: 10,),
+                                Text(
+                                  "Wordpress",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700,
                                       fontSize: 25),
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                ElevatedButton(
+                                  onHover: (value) {
+                                    wordpress = value;
+                                    setState(() {});
+                                  },
+                                  style: ButtonStyle(
+                                    backgroundColor: MaterialStatePropertyAll(
+                                        wordpress
+                                            ? Colors.yellow
+                                            : Colors.black),
+                                    fixedSize:
+                                        MaterialStatePropertyAll(Size(150, 50)),
+                                    shape: MaterialStatePropertyAll(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, "Skill");
+                                  },
+                                  child: Text(
+                                    "80%",
+                                    style: TextStyle(
+                                        color: wordpress
+                                            ? Colors.black
+                                            : Colors.white,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 25),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(
                           width: MediaQuery.sizeOf(context).width * 0.01,
                         ),
-                        Container(
-                          height: MediaQuery.sizeOf(context).height * 0.3,
-                          width: MediaQuery.sizeOf(context).width * 0.12,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Color(0xff1F1F1F)),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.asset(
-                                "assets/images/c.png",
-                                height: 100,
-                                width: 50,
-                              ),
-                              // SizedBox(height: 10,),
-                              Text(
-                                "c Programing",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 25),
-                              ),
-                              SizedBox(
-                                height: 30,
-                              ),
-                              ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStatePropertyAll(Colors.black),
-                                  fixedSize:
-                                      MaterialStatePropertyAll(Size(150, 50)),
-                                  shape: MaterialStatePropertyAll(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  ),
+                        InkWell(
+                          onTap: () => Navigator.pushNamed(context, "Skill"),
+                          onHover: (value) {
+                            c = value;
+                            setState(() {});
+                          },
+                          child: Container(
+                            height: MediaQuery.sizeOf(context).height * 0.3,
+                            width: MediaQuery.sizeOf(context).width * 0.12,
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color:
+                                        c ? Colors.yellow : Colors.transparent),
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color(0xff1F1F1F)),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Image.asset(
+                                  "assets/images/c.png",
+                                  height: 100,
+                                  width: 50,
                                 ),
-                                onPressed: () {
-                                  Navigator.pushNamed(context, "Skill");
-                                },
-                                child: Text(
-                                  "95%",
+                                // SizedBox(height: 10,),
+                                Text(
+                                  "c Programing",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700,
                                       fontSize: 25),
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                ElevatedButton(
+                                  onHover: (value) {
+                                    c = value;
+                                    setState(() {});
+                                  },
+                                  style: ButtonStyle(
+                                    backgroundColor: MaterialStatePropertyAll(
+                                        c ? Colors.yellow : Colors.black),
+                                    fixedSize:
+                                        MaterialStatePropertyAll(Size(150, 50)),
+                                    shape: MaterialStatePropertyAll(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, "Skill");
+                                  },
+                                  child: Text(
+                                    "95%",
+                                    style: TextStyle(
+                                        color: c ? Colors.black : Colors.white,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 25),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(
                           width: MediaQuery.sizeOf(context).width * 0.01,
                         ),
-                        Container(
-                          height: MediaQuery.sizeOf(context).height * 0.3,
-                          width: MediaQuery.sizeOf(context).width * 0.12,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Color(0xff1F1F1F)),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.asset(
-                                "assets/images/cpp.png",
-                                height: 100,
-                                width: 50,
-                              ),
-                              // SizedBox(height: 10,),
-                              Text(
-                                "c++",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 25),
-                              ),
-                              SizedBox(
-                                height: 30,
-                              ),
-                              ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStatePropertyAll(Colors.black),
-                                  fixedSize:
-                                      MaterialStatePropertyAll(Size(150, 50)),
-                                  shape: MaterialStatePropertyAll(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  ),
+                        InkWell(
+                          onTap: () => Navigator.pushNamed(context, "Skill"),
+                          onHover: (value) {
+                            cpp = value;
+                            setState(() {});
+                          },
+                          child: Container(
+                            height: MediaQuery.sizeOf(context).height * 0.3,
+                            width: MediaQuery.sizeOf(context).width * 0.12,
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: cpp
+                                        ? Colors.yellow
+                                        : Colors.transparent),
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color(0xff1F1F1F)),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Image.asset(
+                                  "assets/images/cpp.png",
+                                  height: 100,
+                                  width: 50,
                                 ),
-                                onPressed: () {
-                                  Navigator.pushNamed(context, "Skill");
-                                },
-                                child: Text(
-                                  "95%",
+                                // SizedBox(height: 10,),
+                                Text(
+                                  "c++",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700,
                                       fontSize: 25),
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                ElevatedButton(
+                                  onHover: (value) {
+                                    cpp = value;
+                                    setState(() {});
+                                  },
+                                  style: ButtonStyle(
+                                    backgroundColor: MaterialStatePropertyAll(
+                                        cpp ? Colors.yellow : Colors.black),
+                                    fixedSize:
+                                        MaterialStatePropertyAll(Size(150, 50)),
+                                    shape: MaterialStatePropertyAll(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, "Skill");
+                                  },
+                                  child: Text(
+                                    "95%",
+                                    style: TextStyle(
+                                        color:
+                                            cpp ? Colors.black : Colors.white,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 25),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(
                           width: MediaQuery.sizeOf(context).width * 0.01,
                         ),
-                        Container(
-                          height: MediaQuery.sizeOf(context).height * 0.3,
-                          width: MediaQuery.sizeOf(context).width * 0.12,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Color(0xff1F1F1F)),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.asset(
-                                "assets/images/ps.png",
-                                height: 100,
-                                width: 50,
-                              ),
-                              // SizedBox(height: 10,),
-                              Text(
-                                "Photoshop",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 25),
-                              ),
-                              SizedBox(
-                                height: 30,
-                              ),
-                              ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStatePropertyAll(Colors.black),
-                                  fixedSize:
-                                      MaterialStatePropertyAll(Size(150, 50)),
-                                  shape: MaterialStatePropertyAll(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  ),
+                        InkWell(
+                          onTap: () => Navigator.pushNamed(context, "Skill"),
+                          onHover: (value) {
+                            ps = value;
+                            setState(() {});
+                          },
+                          child: Container(
+                            height: MediaQuery.sizeOf(context).height * 0.3,
+                            width: MediaQuery.sizeOf(context).width * 0.12,
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: ps
+                                        ? Colors.yellow
+                                        : Colors.transparent),
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color(0xff1F1F1F)),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Image.asset(
+                                  "assets/images/ps.png",
+                                  height: 100,
+                                  width: 50,
                                 ),
-                                onPressed: () {
-                                  Navigator.pushNamed(context, "Skill");
-                                },
-                                child: Text(
-                                  "90%",
+                                // SizedBox(height: 10,),
+                                Text(
+                                  "Photoshop",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700,
                                       fontSize: 25),
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                ElevatedButton(
+                                  onHover: (value) {
+                                    ps = value;
+                                    setState(() {});
+                                  },
+                                  style: ButtonStyle(
+                                    backgroundColor: MaterialStatePropertyAll(
+                                        ps ? Colors.yellow : Colors.black),
+                                    fixedSize:
+                                        MaterialStatePropertyAll(Size(150, 50)),
+                                    shape: MaterialStatePropertyAll(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, "Skill");
+                                  },
+                                  child: Text(
+                                    "90%",
+                                    style: TextStyle(
+                                        color: ps ? Colors.black : Colors.white,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 25),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -1962,22 +1889,24 @@ class _WebviewState extends State<Webview> {
                             height: 20,
                           ),
                           Text(
-                            "Sed ut perspiciatis unde omnin natus totam rem aperiam\n eaque inventore veritatis...",
+                            " Nike   Just Do It",
                             style: TextStyle(
                               color: Colors.white,
                             ),
                           ),
                           IconButton(
-                            hoverColor: Colors.yellow,
-                            highlightColor: Colors.red,
-                            splashRadius: 30,
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.arrow_circle_right_sharp,
-                              size: 50,
-                              color: Color(0xff1F1F1F),
-                            ),
-                          ),
+                              hoverColor: Colors.yellow,
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  "Projects",
+                                );
+                              },
+                              icon: Icon(
+                                Icons.arrow_circle_right_sharp,
+                                color: narro ? Colors.yellow : Colors.black,
+                                size: 35,
+                              ))
                         ],
                       ),
                     ],
@@ -2025,13 +1954,13 @@ class _WebviewState extends State<Webview> {
                             ),
                           ),
                           IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.arrow_circle_right_sharp,
-                              size: 50,
-                              color: Color(0xff1F1F1F),
-                            ),
-                          ),
+                              hoverColor: Colors.yellow,
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_circle_right_sharp,
+                                color: farro ? Colors.yellow : Colors.black,
+                                size: 35,
+                              ))
                         ],
                       ),
                       SizedBox(
@@ -2093,13 +2022,13 @@ class _WebviewState extends State<Webview> {
                             ),
                           ),
                           IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.arrow_circle_right_sharp,
-                              size: 50,
-                              color: Color(0xff1F1F1F),
-                            ),
-                          ),
+                              hoverColor: Colors.yellow,
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_circle_right_sharp,
+                                color: earro ? Colors.yellow : Colors.black,
+                                size: 35,
+                              )),
                         ],
                       ),
                     ],
@@ -2147,13 +2076,13 @@ class _WebviewState extends State<Webview> {
                             ),
                           ),
                           IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.arrow_circle_right_sharp,
-                              size: 50,
-                              color: Color(0xff1F1F1F),
-                            ),
-                          ),
+                              hoverColor: Colors.yellow,
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_circle_right_sharp,
+                                color: rarro ? Colors.yellow : Colors.black,
+                                size: 35,
+                              ))
                         ],
                       ),
                       SizedBox(
@@ -2173,8 +2102,13 @@ class _WebviewState extends State<Webview> {
                     height: 50,
                   ),
                   ElevatedButton(
+                    onHover: (value) {
+                      view = value;
+                      setState(() {});
+                    },
                     style: ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(Colors.yellow),
+                      backgroundColor: MaterialStatePropertyAll(
+                          view ? Colors.black : Colors.yellow),
                       fixedSize: MaterialStatePropertyAll(Size(200, 50)),
                       shape: MaterialStatePropertyAll(
                         RoundedRectangleBorder(
@@ -2187,7 +2121,8 @@ class _WebviewState extends State<Webview> {
                     },
                     child: Text(
                       "View More Projects   >",
-                      style: TextStyle(color: Colors.black),
+                      style:
+                          TextStyle(color: view ? Colors.white : Colors.black),
                     ),
                   ),
                 ],
@@ -2348,6 +2283,7 @@ class _WebviewState extends State<Webview> {
           ],
         ),
       ),
+        drawer: Talk(),
     );
   }
 }

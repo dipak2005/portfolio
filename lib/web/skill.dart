@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/screens/webview.dart';
+import 'package:portfolio/web/webview.dart';
+import 'package:portfolio/widgets/container.dart';
 
 import '../drawer/talk.dart';
 
@@ -61,240 +62,7 @@ class _SkillState extends State<Skill> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: MediaQuery.sizeOf(context).height * 0.1,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Image.asset(
-                      "assets/images/appicon.png",
-                      height: MediaQuery.sizeOf(context).height * 0.07,
-                      width: MediaQuery.sizeOf(context).width * 0.1,
-                    ),
-                  ),
-                  Text(
-                    "Portfolio",
-                    style: TextStyle(
-                        color: Colors.yellow,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 30),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.15,
-                  ),
-                  Expanded(flex: 2,
-                    child: DropdownButton(
-                      icon: Icon(
-                        Icons.arrow_drop_down,
-                        color: Colors.yellow,
-                      ),
-                      menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                      dropdownColor: Colors.transparent,
-                      underline: SizedBox(),
-                      items: [
-                        DropdownMenuItem(
-                          onTap: () {},
-                          child: Text(
-                            "Multi page    >",
-                            style: TextStyle(color: Colors.yellow),
-                          ),
-                          value: 0,
-                        ),
-                        DropdownMenuItem(
-                          child: Text(
-                            "one page",
-                            style: TextStyle(color: Colors.yellow),
-                          ),
-                          value: 1,
-                        ),
-                      ],
-                      hint: Text(
-                        "Home",
-                        style: TextStyle(color: Colors.yellow),
-                      ),
-                      onChanged: (value) {},
-                    ),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.01,
-                  ),
-                  TextButton(
-                    onHover: (value) {
-                      ishover = value;
-                      istexthover = value;
-                      setState(() {});
-                    },
-                    onPressed: () {},
-                    child: Text(
-                      "About",
-                      style: TextStyle(
-                          color: istexthover ? Colors.yellow : Colors.white),
-                    ),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.01,
-                  ),
-                  DropdownButton(
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.yellow,
-                    ),
-                    dropdownColor: Colors.transparent,
-                    menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    items: [
-                      DropdownMenuItem(
-                        child: Text(
-                          "Service one",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 0,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Service Two",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 1,
-                      ),
-                      DropdownMenuItem(
-                        enabled: true,
-                        child: Text(
-                          "Service Three",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 2,
-                      )
-                    ],
-                    hint: Text(
-                      "Services",
-                      style: TextStyle(color: Colors.yellow),
-                    ),
-                    focusColor: Colors.transparent,
-                    onChanged: (value) {},
-                    underline: SizedBox(),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.02,
-                  ),
-                  DropdownButton(
-                    underline: SizedBox(),
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.yellow,
-                    ),
-                    isDense: true,
-                    menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    dropdownColor: Colors.transparent,
-                    items: [
-                      DropdownMenuItem(
-                        child: Text(
-                          "Protfolio 1",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 0,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Portfolio 2",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 1,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Portfolio 3",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 2,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Portfolio 4",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 3,
-                      )
-                    ],
-                    hint: Text(
-                      "Portfolio",
-                      style: TextStyle(color: Colors.yellow),
-                    ),
-                    onChanged: (value) {},
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  DropdownButton(
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.yellow,
-                    ),
-                    underline: SizedBox(),
-                    menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    dropdownColor: Colors.transparent,
-                    items: [
-                      DropdownMenuItem(
-                        onTap: () {},
-                        child: Text(
-                          "Blog Standard",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 0,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Blog Details",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 1,
-                      ),
-                    ],
-                    hint: Text(
-                      "Blog",
-                      style: TextStyle(color: Colors.yellow),
-                    ),
-                    onChanged: (value) {},
-                    //   value: dropdown,
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.02,
-                  ),
-                  Expanded(
-                    child: TextButton(
-                        onPressed: () {},
-                        onHover: (value) {
-                          ishover = value;
-                          istexthover = value;
-                          setState(() {});
-                        },
-                        child: Text(
-                          "Contact",
-                          style: TextStyle(
-                              color:
-                                  istexthover ? Colors.yellow : Colors.white),
-                        )),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.1,
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Let's Talk",
-                      style: TextStyle(color: Colors.white70),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () => Talk(),
-                    child: CircleAvatar(
-                      backgroundColor: Color(0xffC9F31D),
-                      child: Icon(Icons.menu, color: Colors.black, size: 30),
-                    ),
-                  )
-                ],
-              ),
-            ),
+           Commencontainer(),
             Column(
               children: [
                 SizedBox(
@@ -511,7 +279,7 @@ class _SkillState extends State<Skill> {
                           child: Row(
                             children: [
                               SizedBox(
-                                width: 30,
+                                width:20,
                               ),
                               Text(
                                 "The Flutter skill represents a developer's proficiency in utilizing the Flutter framework\n\n to create high-performance, natively compiled applications for mobile, web, and\n\n desktop from a single codebase. With this skill, developers can build visually appealing\n\n and responsive user interfaces, implement complex functionality, and deploy\n\n applications across multiple platforms.",
@@ -521,7 +289,7 @@ class _SkillState extends State<Skill> {
                                     fontSize: 25),
                               ),
                               SizedBox(
-                                width: MediaQuery.sizeOf(context).width * 0.1,
+                                width: MediaQuery.sizeOf(context).width * 0.08,
                               ),
                               Container(
                                 height: MediaQuery.sizeOf(context).height * 0.3,
@@ -699,7 +467,7 @@ class _SkillState extends State<Skill> {
                                     fontSize: 25),
                               ),
                               SizedBox(
-                                width: MediaQuery.sizeOf(context).width * 0.1,
+                                width: MediaQuery.sizeOf(context).width * 0.08,
                               ),
                               Container(
                                 height: MediaQuery.sizeOf(context).height * 0.3,
@@ -1056,7 +824,7 @@ class _SkillState extends State<Skill> {
                                     fontSize: 25),
                               ),
                               SizedBox(
-                                width: MediaQuery.sizeOf(context).width * 0.1,
+                                width: MediaQuery.sizeOf(context).width * 0.08,
                               ),
                               Container(
                                 height: MediaQuery.sizeOf(context).height * 0.3,

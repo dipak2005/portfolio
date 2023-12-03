@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/screens/mobileview.dart';
-import 'package:portfolio/screens/tabletview.dart';
+import 'package:portfolio/mobile/mobileview.dart';
+import 'package:portfolio/tablet/tabletview.dart';
 import 'package:portfolio/screens/watch.dart';
-import 'package:portfolio/screens/webview.dart';
+import 'package:portfolio/web/webview.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class Portfolio extends StatefulWidget {

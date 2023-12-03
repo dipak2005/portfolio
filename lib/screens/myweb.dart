@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/screens/contact.dart';
-import 'package:portfolio/screens/mobileview.dart';
+import 'package:portfolio/drawer/talk.dart';
+import 'package:portfolio/web/contact.dart';
+import 'package:portfolio/mobile/mobileview.dart';
 import 'package:portfolio/screens/portfolio.dart';
-import 'package:portfolio/screens/projects.dart';
-import 'package:portfolio/screens/skill.dart';
+import 'package:portfolio/web/projects.dart';
+import 'package:portfolio/web/skill.dart';
 import 'package:portfolio/screens/watch.dart';
-import 'package:portfolio/screens/webview.dart';
+import 'package:portfolio/web/webview.dart';
 
 // import 'homepage.dart';
 class Myweb   extends StatefulWidget {
@@ -32,6 +33,7 @@ class _MywebState extends State<Myweb> {
         "Contact":(context) => Contact(),
         "Skill":(context) => Skill(),
         "Projects":(context) => Projects(),
+        "Talk":(context) => Talk(),
       },
     );
   }

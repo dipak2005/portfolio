@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/screens/class.dart';
-import 'package:portfolio/screens/webview.dart';
+import 'package:portfolio/web/webview.dart';
+import 'package:portfolio/variables/hover.dart';
+import 'package:portfolio/widgets/container.dart';
 
 import '../drawer/talk.dart';
 
@@ -14,19 +16,21 @@ class Contact extends StatefulWidget {
 }
 
 class _ContactState extends State<Contact> {
-  bool isval=false;
-  GlobalKey<FormState> gkey= GlobalKey<FormState>();
-  TextEditingController name=TextEditingController();
-  TextEditingController phone=TextEditingController();
-  TextEditingController email=TextEditingController();
+  bool isval = false;
+  GlobalKey<FormState> gkey = GlobalKey<FormState>();
+  TextEditingController name = TextEditingController();
+  TextEditingController phone = TextEditingController();
+  TextEditingController email = TextEditingController();
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    name.text=user.name??"";
-    email.text=user.email??"";
-    phone.text=user.password??"";
+    name.text = user.name ?? "";
+    email.text = user.email ?? "";
+    phone.text = user.password ?? "";
   }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff131313),
@@ -73,236 +77,7 @@ class _ContactState extends State<Contact> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.1,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Image.asset(
-                    "assets/images/appicon.png",
-                    height: MediaQuery.sizeOf(context).height * 0.07,
-                    width: MediaQuery.sizeOf(context).width * 0.1,
-                  ),
-                  TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        "Portfolio",
-                        style: TextStyle(
-                            color: Colors.yellow,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 30),
-                      )),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.15,
-                  ),
-                  DropdownButton(
-                    icon: const Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.yellow,
-                    ),
-                    menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    dropdownColor: Colors.transparent,
-                    underline: const SizedBox(),
-                    items: [
-                      DropdownMenuItem(
-                        onTap: () {},
-                        value: 0,
-                        child: const Text(
-                          "Multi page    >",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                      ),
-                      const DropdownMenuItem(
-                        value: 1,
-                        child: Text(
-                          "one page",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                      ),
-                    ],
-                    hint: Text(
-                      "Home",
-                      style: TextStyle(color: Colors.yellow),
-                    ),
-                    onChanged: (value) {},
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.01,
-                  ),
-                  TextButton(
-                    onHover: (value) {
-                      ishover = value;
-                      istexthover = value;
-                      setState(() {});
-                    },
-                    onPressed: () {},
-                    child: Text(
-                      "About",
-                      style: TextStyle(
-                          color: istexthover ? Colors.yellow : Colors.white),
-                    ),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.01,
-                  ),
-                  DropdownButton(
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.yellow,
-                    ),
-                    dropdownColor: Colors.transparent,
-                    menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    items: [
-                      DropdownMenuItem(
-                        child: Text(
-                          "Service one",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 0,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Service Two",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 1,
-                      ),
-                      DropdownMenuItem(
-                        enabled: true,
-                        child: Text(
-                          "Service Three",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 2,
-                      )
-                    ],
-                    hint: Text(
-                      "Services",
-                      style: TextStyle(color: Colors.yellow),
-                    ),
-                    focusColor: Colors.transparent,
-                    onChanged: (value) {},
-                    underline: SizedBox(),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.02,
-                  ),
-                  DropdownButton(
-                    underline: SizedBox(),
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.yellow,
-                    ),
-                    isDense: true,
-                    menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    dropdownColor: Colors.transparent,
-                    items: [
-                      DropdownMenuItem(
-                        child: Text(
-                          "Protfolio 1",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 0,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Portfolio 2",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 1,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Portfolio 3",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 2,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Portfolio 4",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 3,
-                      )
-                    ],
-                    hint: Text(
-                      "Portfolio",
-                      style: TextStyle(color: Colors.yellow),
-                    ),
-                    onChanged: (value) {},
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  DropdownButton(
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.yellow,
-                    ),
-                    underline: SizedBox(),
-                    menuMaxHeight: MediaQuery.sizeOf(context).height * 0.2,
-                    dropdownColor: Colors.transparent,
-                    items: [
-                      DropdownMenuItem(
-                        onTap: () {},
-                        child: Text(
-                          "Blog Standard",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 0,
-                      ),
-                      DropdownMenuItem(
-                        child: Text(
-                          "Blog Details",
-                          style: TextStyle(color: Colors.yellow),
-                        ),
-                        value: 1,
-                      ),
-                    ],
-                    hint: Text(
-                      "Blog",
-                      style: TextStyle(color: Colors.yellow),
-                    ),
-                    onChanged: (value) {},
-                    //   value: dropdown,
-                  ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.02,
-                  ),
-                  TextButton(
-                      onPressed: () {},
-                      onHover: (value) {
-                        ishover = value;
-                        istexthover = value;
-                        setState(() {});
-                      },
-                      child: Text(
-                        "Contact",
-                        style: TextStyle(
-                            color: istexthover ? Colors.yellow : Colors.white),
-                      )),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.1,
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Let's Talk",
-                      style: TextStyle(color: Colors.white70),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () => Talk(),
-                    child: CircleAvatar(
-                      backgroundColor: Color(0xffC9F31D),
-                      child: Icon(Icons.menu, color: Colors.black, size: 30),
-                    ),
-                  )
-                ],
-              ),
-            ),
+           Commencontainer(),
             Container(
               height: MediaQuery.sizeOf(context).height * 1.3,
               width: MediaQuery.sizeOf(context).width,
@@ -325,6 +100,10 @@ class _ContactState extends State<Contact> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       TextButton(
+                        onHover: (value) {
+                          portfolio = value;
+                          setState(() {});
+                        },
                         onPressed: () {
                           Navigator.pop(context);
                         },
@@ -333,7 +112,7 @@ class _ContactState extends State<Contact> {
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 17,
-                              color: Colors.white),
+                              color: portfolio ? Colors.yellow : Colors.white),
                         ),
                       ),
                       SizedBox(
@@ -437,14 +216,16 @@ class _ContactState extends State<Contact> {
                                         MediaQuery.sizeOf(context).width * 0.15,
                                     child: Padding(
                                       padding: const EdgeInsets.all(18.0),
-                                      child: TextFormField(scrollPadding: EdgeInsets.symmetric(horizontal: 30),
+                                      child: TextFormField(
+                                        scrollPadding: EdgeInsets.symmetric(
+                                            horizontal: 30),
                                         controller: name,
                                         validator: (value) {
-                                         if(value?.isEmpty??true){
-                                           return "* Please Enter Your Name";
-                                         }else{
-                                           return null;
-                                         }
+                                          if (value?.isEmpty ?? true) {
+                                            return "* Please Enter Your Name";
+                                          } else {
+                                            return null;
+                                          }
                                         },
                                         decoration: InputDecoration(
                                             hintText: "Your name",
@@ -473,11 +254,13 @@ class _ContactState extends State<Contact> {
                                       child: TextFormField(
                                         controller: email,
                                         validator: (value) {
-                                          if(value?.isEmpty??true){
+                                          if (value?.isEmpty ?? true) {
                                             return "* Enter Your Email";
-                                          }else if(value?.contains("@gmail.com")??true){
+                                          } else if (value
+                                                  ?.contains("@gmail.com") ??
+                                              true) {
                                             return null;
-                                          }else{
+                                          } else {
                                             return "* Invalied Email";
                                           }
                                         },
@@ -541,12 +324,12 @@ class _ContactState extends State<Contact> {
                                       child: TextFormField(
                                         controller: phone,
                                         validator: (value) {
-                                          var val=int.tryParse(value!);
-                                          if(value?.isEmpty??true){
+                                          var val = int.tryParse(value!);
+                                          if (value?.isEmpty ?? true) {
                                             return "* Enter your Phone Number";
-                                          }else if(value != 10){
+                                          } else if (value != 10) {
                                             return "* Invalied Phone Number";
-                                          }else{
+                                          } else {
                                             return null;
                                           }
                                         },
@@ -629,7 +412,7 @@ class _ContactState extends State<Contact> {
                               child: ElevatedButton(
                                 style: ButtonStyle(
                                   backgroundColor:
-                                      MaterialStatePropertyAll(Colors.yellow),
+                                      MaterialStatePropertyAll(message?Colors.black:Colors.yellow),
                                   fixedSize: MaterialStatePropertyAll(
                                     Size(180, 50),
                                   ),
@@ -639,17 +422,20 @@ class _ContactState extends State<Contact> {
                                     ),
                                   ),
                                 ),
+                                onHover: (value) {
+                                  message=value;
+                                  setState(() {});
+                                },
                                 onPressed: () {
-                                  bool isval=gkey.currentState?.validate()??true;
-                                  if(isval){
-
-                                  }
+                                  bool isval =
+                                      gkey.currentState?.validate() ?? true;
+                                  if (isval) {}
                                 },
                                 child: Text(
                                   "Send us Message",
                                   style: TextStyle(
                                     fontSize: 17,
-                                    color: Colors.black,
+                                    color: message?Colors.white:Colors.black,
                                   ),
                                 ),
                               ),
