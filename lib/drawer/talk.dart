@@ -15,22 +15,23 @@ class _TalkState extends State<Talk> {
       child: Container(
         height: MediaQuery.sizeOf(context).height,
         width: MediaQuery.sizeOf(context).width * 0.3,
-        decoration: BoxDecoration(color: Colors.black),
+        decoration: const BoxDecoration(color: Colors.black),
         child: NavigationDrawer(
-          backgroundColor: Color(0xff131313),
+          backgroundColor: const Color(0xff131313),
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+             mainAxisSize: MainAxisSize.min,
               children: [
+                SizedBox(width: MediaQuery.sizeOf(context).width*0.02,),
                 CircleAvatar(
                   backgroundColor: Colors.black,
                   radius: 50,
                   child: Image.asset("assets/images/appicon.png"),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Text(
@@ -43,7 +44,7 @@ class _TalkState extends State<Talk> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text.rich(
@@ -76,10 +77,10 @@ class _TalkState extends State<Talk> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Align(
+            const Align(
               alignment: Alignment(-0.2, 0),
               child: Text(
                 "*  Uniqe Developer  *",
@@ -89,10 +90,10 @@ class _TalkState extends State<Talk> {
                     color: Colors.white),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Align(
+            const Align(
               alignment: Alignment(-0.8, 0),
               child: Text(
                 "My Personal Details : -",
@@ -102,7 +103,7 @@ class _TalkState extends State<Talk> {
                     fontSize: 17),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Row(
@@ -110,15 +111,15 @@ class _TalkState extends State<Talk> {
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width*0.005,
                 ),
-                Icon(
+                const Icon(
                   Icons.location_on_outlined,
                   size: 30,
                   color: Colors.yellow,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
-                Text(
+                const Text(
                   "Harshidhdhi Park Society \n\n Ribda Rajkot- 360311 ",
                   style: TextStyle(
                       color: Colors.white,
@@ -127,7 +128,7 @@ class _TalkState extends State<Talk> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Row(
@@ -135,7 +136,7 @@ class _TalkState extends State<Talk> {
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width*0.005,
                 ),
-                Icon(
+                const Icon(
                   Icons.email_outlined,
                   color: Colors.yellow,
                   size: 30,
@@ -143,7 +144,7 @@ class _TalkState extends State<Talk> {
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width*0.02,
                 ),
-                Text(
+                const Text(
                   "d74252835@gmail.com",
                   style: TextStyle(
                     fontSize: 20,
@@ -153,7 +154,7 @@ class _TalkState extends State<Talk> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Row(
@@ -161,7 +162,7 @@ class _TalkState extends State<Talk> {
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width*0.005,
                 ),
-                Icon(
+                const Icon(
                   Icons.call,
                   color: Colors.yellow,
                   size: 30,
@@ -169,7 +170,7 @@ class _TalkState extends State<Talk> {
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width*0.01,
                 ),
-                Text(
+                const Text(
                   " +91 1478523690",
                   style: TextStyle(
                       color: Colors.white,
@@ -178,13 +179,13 @@ class _TalkState extends State<Talk> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Align(
+            const Align(
                 alignment: Alignment(-0.9, 0),
                 child: Text(
                   "Contact Me : -",
@@ -193,7 +194,7 @@ class _TalkState extends State<Talk> {
                       color: Colors.white,
                       fontSize: 17),
                 )),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Row(
@@ -206,7 +207,7 @@ class _TalkState extends State<Talk> {
                   child:
                       Image.asset("assets/images/con.png", color: Colors.black,fit: BoxFit.cover),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 CircleAvatar(
@@ -214,7 +215,7 @@ class _TalkState extends State<Talk> {
                   child: Image.asset("assets/images/con1.png",fit: BoxFit.cover,
                       color: Colors.black),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 CircleAvatar(
@@ -224,7 +225,7 @@ class _TalkState extends State<Talk> {
                     color: Colors.black,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 CircleAvatar(

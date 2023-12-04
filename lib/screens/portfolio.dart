@@ -17,11 +17,11 @@ class _PortfolioState extends State<Portfolio> {
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
       builder: (context, sizingInformation) {
-        if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
-            return Webview();
+        if (sizingInformation.deviceScreenType==DeviceScreenType.desktop) {
+          return Webview();
         }
 
-        if (sizingInformation.deviceScreenType == DeviceScreenType.tablet) {
+        if (sizingInformation.deviceScreenType==DeviceScreenType.tablet) {
           return Tablet();
         }
 

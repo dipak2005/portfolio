@@ -20,6 +20,7 @@ dependencies:
   web_browser: ^0.7.4
   responsive_builder: ^0.7.0
   responsive_framework: ^1.1.1
+  dropdown_button2: ^2.3.9
 
 dev_dependencies:
   flutter_test:
