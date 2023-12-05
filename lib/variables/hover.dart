@@ -1,4 +1,4 @@
- bool home=false;
+ bool home=true;
 bool about=false;
 bool service=false;
 bool portfolio=false;

@@ -116,12 +116,13 @@ class _WebviewState extends State<Webview> {
                           children: [
                             ElevatedButton(
                                 style: ButtonStyle(
-                                    shape: MaterialStatePropertyAll(
-                                        RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(10))),
-                                    backgroundColor: MaterialStatePropertyAll(
-                                        hire ? Colors.black : Colors.yellow)),
+                                  shape: MaterialStatePropertyAll(
+                                      RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10))),
+                                  backgroundColor: MaterialStatePropertyAll(
+                                      hire ? Colors.black : Colors.yellow),
+                                ),
                                 onPressed: () {
                                   Navigator.pushNamed(context, "Contact");
                                 },
@@ -1955,7 +1956,12 @@ class _WebviewState extends State<Webview> {
                           ),
                           IconButton(
                               hoverColor: Colors.yellow,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  "Projects",
+                                );
+                              },
                               icon: Icon(
                                 Icons.arrow_circle_right_sharp,
                                 color: farro ? Colors.yellow : Colors.black,
@@ -2023,7 +2029,12 @@ class _WebviewState extends State<Webview> {
                           ),
                           IconButton(
                               hoverColor: Colors.yellow,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  "Projects",
+                                );
+                              },
                               icon: Icon(
                                 Icons.arrow_circle_right_sharp,
                                 color: earro ? Colors.yellow : Colors.black,
@@ -2077,7 +2088,12 @@ class _WebviewState extends State<Webview> {
                           ),
                           IconButton(
                               hoverColor: Colors.yellow,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  "Projects",
+                                );
+                              },
                               icon: Icon(
                                 Icons.arrow_circle_right_sharp,
                                 color: rarro ? Colors.yellow : Colors.black,
@@ -2283,7 +2299,7 @@ class _WebviewState extends State<Webview> {
           ],
         ),
       ),
-        drawer: Talk(),
+      drawer: Talk(),
     );
   }
 }
