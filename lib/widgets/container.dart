@@ -16,6 +16,7 @@ class Commencontainer extends StatefulWidget {
 
 class _CommencontainerState extends State<Commencontainer> {
   String? selectedvalue;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -45,36 +46,35 @@ class _CommencontainerState extends State<Commencontainer> {
             InkWell(
               onHover: (value) {
                 setState(() {
-                  home=value;
+                  home = value;
                 });
-
-              },  onTap: () {},
+              },
+              onTap: () {},
               child: DropdownButtonHideUnderline(
-                child: DropdownButton2<String>(barrierDismissible: true,
-
+                child: DropdownButton2<String>(
+                  barrierDismissible: true,
                   hint: Text(
                     'Home',
                     style: TextStyle(
                       fontSize: 14,
-                      color: home?Colors.yellow:Colors.white,
+                      color: home ? Colors.yellow : Colors.white,
                     ),
                   ),
                   items: items
                       .map((String item) => DropdownMenuItem<String>(
-                    value: item,
-                    child: Text(
-                      item,
-                      style: const TextStyle(
-                        fontSize: 14,
-                      ),
-                    ),
-                  ))
+                            value: item,
+                            child: Text(
+                              item,
+                              style: const TextStyle(
+                                fontSize: 14,
+                              ),
+                            ),
+                          ))
                       .toList(),
                   value: selectedvalue,
                   onChanged: (String? value) {
                     setState(() {
                       selectedvalue = value;
-
                     });
                   },
                   buttonStyleData: const ButtonStyleData(
@@ -88,46 +88,45 @@ class _CommencontainerState extends State<Commencontainer> {
                 ),
               ),
             ),
-
             TextButton(
               onHover: (value) {
                 about = value;
 
                 setState(() {});
               },
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "Skill");
+              },
               child: Text(
                 "About",
                 style: TextStyle(color: about ? Colors.yellow : Colors.white),
               ),
             ),
-
             InkWell(
               onHover: (value) {
-                service=value;
+                service = value;
                 setState(() {});
               },
               onTap: () {},
               child: DropdownButtonHideUnderline(
                 child: DropdownButton2<String>(
-
                   hint: Text(
                     'Service',
                     style: TextStyle(
                       fontSize: 14,
-                      color: service?Colors.yellow:Colors.white,
+                      color: service ? Colors.yellow : Colors.white,
                     ),
                   ),
                   items: items1
                       .map((String item) => DropdownMenuItem<String>(
-                    value: item,
-                    child: Text(
-                      item,
-                      style: const TextStyle(
-                        fontSize: 14,
-                      ),
-                    ),
-                  ))
+                            value: item,
+                            child: Text(
+                              item,
+                              style: const TextStyle(
+                                fontSize: 14,
+                              ),
+                            ),
+                          ))
                       .toList(),
                   value: selectedvalue,
                   onChanged: (String? value) {
@@ -146,32 +145,31 @@ class _CommencontainerState extends State<Commencontainer> {
                 ),
               ),
             ),
-
             InkWell(
               onHover: (value) {
-                portfolio=value;
+                portfolio = value;
                 setState(() {});
-              },  onTap: () {},
+              },
+              onTap: () {},
               child: DropdownButtonHideUnderline(
                 child: DropdownButton2<String>(
-
                   hint: Text(
                     'Portfolio',
                     style: TextStyle(
                       fontSize: 14,
-                      color: portfolio?Colors.yellow:Colors.white,
+                      color: portfolio ? Colors.yellow : Colors.white,
                     ),
                   ),
                   items: items2
                       .map((String item) => DropdownMenuItem<String>(
-                    value: item,
-                    child: Text(
-                      item,
-                      style: const TextStyle(
-                        fontSize: 14,
-                      ),
-                    ),
-                  ))
+                            value: item,
+                            child: Text(
+                              item,
+                              style: const TextStyle(
+                                fontSize: 14,
+                              ),
+                            ),
+                          ))
                       .toList(),
                   value: selectedvalue,
                   onChanged: (String? value) {
@@ -190,32 +188,31 @@ class _CommencontainerState extends State<Commencontainer> {
                 ),
               ),
             ),
-
             InkWell(
               onHover: (value) {
-                blog=value;
+                blog = value;
                 setState(() {});
-              },  onTap: () {},
+              },
+              onTap: () {},
               child: DropdownButtonHideUnderline(
                 child: DropdownButton2<String>(
-
                   hint: Text(
                     'Blog',
                     style: TextStyle(
                       fontSize: 14,
-                      color: blog?Colors.yellow:Colors.white,
+                      color: blog ? Colors.yellow : Colors.white,
                     ),
                   ),
-                  items: items
+                  items: items3
                       .map((String item) => DropdownMenuItem<String>(
-                    value: item,
-                    child: Text(
-                      item,
-                      style: const TextStyle(
-                        fontSize: 14,
-                      ),
-                    ),
-                  ))
+                            value: item,
+                            child: Text(
+                              item,
+                              style: const TextStyle(
+                                fontSize: 14,
+                              ),
+                            ),
+                          ))
                       .toList(),
                   value: selectedvalue,
                   onChanged: (String? value) {
@@ -224,7 +221,7 @@ class _CommencontainerState extends State<Commencontainer> {
                     });
                   },
                   buttonStyleData: const ButtonStyleData(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    padding: EdgeInsets.symmetric(horizontal: 12),
                     height: 40,
                     width: 140,
                   ),
@@ -236,10 +233,13 @@ class _CommencontainerState extends State<Commencontainer> {
             ),
 
             TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, "Contact");
+                },
                 onHover: (value) {
                   contact = value;
                   setState(() {});
+
                 },
                 child: Text(
                   "Contact",

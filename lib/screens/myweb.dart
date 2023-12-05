@@ -7,6 +7,7 @@ import 'package:portfolio/screens/portfolio.dart';
 import 'package:portfolio/web/projects.dart';
 import 'package:portfolio/web/skill.dart';
 import 'package:portfolio/screens/watch.dart';
+import 'package:portfolio/web/splashscreen.dart';
 import 'package:portfolio/web/webview.dart';
 
 // import 'homepage.dart';
@@ -25,7 +26,8 @@ class _MywebState extends State<Myweb> {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       routes: {
-        "/":(context) => Portfolio(),
+        "/":(context) => Splashscreen(),
+        "Portfolio":(context) => Portfolio(),
         "Webview":(context) => Webview(),
         "Mobile":(context) => Mobile(),
         "Tablet":(context) => Table(),
@@ -34,6 +36,7 @@ class _MywebState extends State<Myweb> {
         "Skill":(context) => Skill(),
         "Projects":(context) => Projects(),
         "Talk":(context) => Talk(),
+
       },
     );
   }

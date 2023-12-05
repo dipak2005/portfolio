@@ -22,7 +22,7 @@ List<String> items2=[
   'Portfolio 3',
 ];
 
-List <String> item3=[
+List <String> items3=[
   'Blog Standerd',
   'Blog Detail',
 ];
