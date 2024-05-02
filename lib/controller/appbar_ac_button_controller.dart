@@ -1,9 +1,16 @@
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../model/config/export.dart';
 
-class AppbarAcButtonController {
+class AppbarAcButtonController extends GetxController {
 
+ static RxBool isHover = false.obs;
+   RxInt hoverIndex=(-1).obs;
 
+   void setHover(int index){
+    hoverIndex.value=index;
+   }
+  // void hover(bool hover,int index) {
+  //   isHover.value=!isHover.value;
+  // }
 
 }

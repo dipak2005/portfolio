@@ -47,13 +47,13 @@ const contactGradiant = LinearGradient(
 );
 
 BoxShadow primaryColorShadow = BoxShadow(
-  color: primaryColor.withOpacity(100),
+  color: primaryColor.withOpacity(0.1),
   blurRadius: 12,
   offset: Offset(0.7, 0.7),
 );
 
 BoxShadow blackColorShadow = BoxShadow(
-  color: Colors.black.withAlpha(100),
+  color: Colors.black.withOpacity(0.3),
   blurRadius: 12.0,
   offset: const Offset(0.0, 0.0),
 );

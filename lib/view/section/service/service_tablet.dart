@@ -17,19 +17,19 @@ class ServicePageTablet extends StatelessWidget {
       children: [
         CustomTextHeading(text: '\nWhat I can do?'),
         SizedBox(
-          height: 3.w,
+          height: MediaQuery.sizeOf(context).width * 0.03,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.w),
+          padding: EdgeInsets.symmetric(horizontal: MediaQuery.sizeOf(context).width*0.01),
           child: CustomSubHeading(text: servicesSubHeading),
         ),
         SizedBox(
-          height: 5.w,
+          height: MediaQuery.sizeOf(context).width * 0.05,
         ),
         CarouselSlider.builder(
           options: CarouselOptions(
-            viewportFraction: 0.6,
-            height: 300,
+            viewportFraction: 0.5,
+            height: 290,
             autoPlay: true,
             autoPlayInterval: const Duration(seconds: 5),
             enlargeCenterPage: true,
@@ -40,8 +40,9 @@ class ServicePageTablet extends StatelessWidget {
           itemCount: serviceUtil.length,
           itemBuilder: (BuildContext context, int index, int realIndex) {
             return Padding(
-              padding: EdgeInsets.symmetric(vertical: 0.5.w),
+              padding: EdgeInsets.symmetric(vertical: MediaQuery.sizeOf(context).width*0.01),
               child: ServiceCard(
+                index: index,
                 serviceUtil: serviceUtil[index],
               ),
             );

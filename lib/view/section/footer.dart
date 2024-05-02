@@ -11,25 +11,29 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin:
-          EdgeInsets.fromLTRB(0, MediaQuery.sizeOf(context).height, 0.005, 0),
+          EdgeInsets.fromLTRB(0, MediaQuery.sizeOf(context).height*0.05, 0, 0),
       height: MediaQuery.sizeOf(context).height * 0.07,
       width: MediaQuery.sizeOf(context).width,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text("Developed By "),
-          InkWell(
-            onTap: () {
-              var git = Uri.parse(Link().gitHub);
-              launchUrl(git);
-            },
-            child: Text(
-              "Dipak Thakur 💙",
-              style: TextStyle(fontWeight: FontWeight.bold),
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Developed By "),
+            InkWell(
+              onTap: () {
+                var git = Uri.parse(Apis().git);
+                launchUrl(git);
+              },
+              child: Text(
+                "Dipak Thakur 💙",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          Text("© 2024")
-        ],
+            Text("© 2024")
+          ],
+        ),
       ),
     );
   }

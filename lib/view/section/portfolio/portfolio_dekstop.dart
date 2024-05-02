@@ -15,29 +15,29 @@ class PortFolioDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.sizeOf(context).width / 8),
+          horizontal: MediaQuery.sizeOf(context).width / 10),
       child: Column(
         children: [
-          CustomTextHeading(text: "\nprojects"),
+          CustomTextHeading(text: "\nProjects"),
           SizedBox(
-            height: 1.w,
+            height: MediaQuery.sizeOf(context).width * 0.01,
           ),
           CustomSubHeading(text: protfolioSubHeading),
           SizedBox(
-            height: 2.w,
+            height: MediaQuery.sizeOf(context).width * 0.02,
           ),
           Wrap(
             alignment: WrapAlignment.start,
             crossAxisAlignment: WrapCrossAlignment.start,
-            runSpacing: 3.w,
+            runSpacing: MediaQuery.sizeOf(context).width * 0.03,
             children: projectUtilList
                 .asMap()
                 .entries
-                .map((e) => ProjectCard(projectUtil: e.value))
+                .map((e) => ProjectCard(projectUtil: e.value,index: e.key,))
                 .toList(),
           ),
           SizedBox(
-            height: 3.w,
+            height: MediaQuery.sizeOf(context).width * 0.03,
           ),
           ColorChangeButton(
             text: "See More",

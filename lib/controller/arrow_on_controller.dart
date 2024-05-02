@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/animation.dart';
-import 'package:get/get.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+
+import '../model/config/export.dart';
 
 class ArrowOnController extends GetxController {
   RxBool isHover = false.obs;
@@ -12,12 +11,12 @@ class ArrowOnController extends GetxController {
 
 
 
-  final ItemScrollController itemScrollController = ItemScrollController();
-  final scrollDuration = Duration(seconds: 1);
-
-  void jumpTo(int index) => itemScrollController.scrollTo(
-      index: index,
-      duration: scrollDuration,
-      curve: Curves.easeInCubic,
-      alignment: 0);
+  // final ItemScrollController itemScrollController = ItemScrollController();
+  // final scrollDuration = Duration(seconds: 1);
+  //
+  // void jumpTo(int index) => itemScrollController.scrollTo(
+  //     index: index,
+  //     duration: scrollDuration,
+  //     curve: Curves.easeInCubic,
+  //     alignment: 0);
 }

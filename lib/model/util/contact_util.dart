@@ -14,6 +14,5 @@ List<ContactUtils> contactUtils = [
   ContactUtils(url: Apis().xContact, icon: Link().x),
   ContactUtils(url: Apis().linkDinContact, icon: Link().linkDin),
   ContactUtils(url: Apis().instAContact, icon: Link().instAGram),
+  ContactUtils(url: Apis().freelancerContact, icon: Link().freelancer)
 ];
-
-

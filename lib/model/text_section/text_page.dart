@@ -1,4 +1,4 @@
-String hello = '''Hi There, Welcome To My Space  ''';
+String hello = '''Hello, Welcome To My Space  ''';
 
 String yourname = "I'm Dipak Thakur,";
 // String hometitle2 = "A Mobile Application\nDeveloper";
@@ -23,5 +23,5 @@ const String aboutMeHeadline =
 const String aboutMeDetail =
     'I\'m a Fresh Graduate as Software Engineer from Gujarat Technological University, Gujarat India.';
 String servicesSubHeading =
-    "Since the beginning of my journey as a freelance designer and developer, I've worked in startups and collaborated with talented people to create digital products for both business and consumer use. I offer a wide range of services, including brand design, programming and teaching.";
+    "Since The Beginning Of My Journey As a Freelancer , Designer And Developer ";
 //

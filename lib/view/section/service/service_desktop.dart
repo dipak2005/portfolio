@@ -19,21 +19,27 @@ class ServicePageDesktop extends StatelessWidget {
         children: [
           CustomTextHeading(text: '\nWhat I can do?'),
           SizedBox(
-            height: 1.w,
+            height: MediaQuery.sizeOf(context).width * 0.02,
           ),
-          CustomSubHeading(text: servicesSubHeading),
+          CustomSubHeading(
+            text: servicesSubHeading,
+          ),
           SizedBox(
-            height: 1.w,
+            height: MediaQuery.sizeOf(context).width * 0.05,
           ),
           Wrap(
-            spacing: MediaQuery.sizeOf(context).width * 0.03,
-            runSpacing: MediaQuery.sizeOf(context).height * 0.05,
+            key: key,
+            spacing: MediaQuery.sizeOf(context).width * 0.1,
+            runSpacing: MediaQuery.sizeOf(context).height * 0.1,
             alignment: WrapAlignment.start,
             crossAxisAlignment: WrapCrossAlignment.start,
             children: serviceUtil
                 .asMap()
                 .entries
-                .map((e) => ServiceCard(serviceUtil: e.value))
+                .map((e) => ServiceCard(
+                      serviceUtil: e.value,
+                      index: e.key,
+                    ))
                 .toList(),
           )
         ],

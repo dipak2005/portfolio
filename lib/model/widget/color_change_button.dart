@@ -28,8 +28,8 @@ class ColorChangeButton extends StatelessWidget {
 }
 
 class MobileCCButton extends StatelessWidget {
-  final DesktopCcButtonController controller =
-      Get.find<DesktopCcButtonController>();
+  final MobileCCButtonController controller =
+      Get.put(MobileCCButtonController());
   final String text;
   final Function() onTap;
 
@@ -78,11 +78,14 @@ class MobileCCButton extends StatelessWidget {
               child: Center(
                 child: Padding(
                   padding: EdgeInsets.all(10),
-                  child: FittedBox(fit: BoxFit.scaleDown,
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
                     child: Text(
                       text.toUpperCase(),
                       style: TextStyle(
-                        color: !(controller.isHover.value)?theme.textColor:Colors.white,
+                        color: !(controller.isHover.value)
+                            ? theme.textColor
+                            : Colors.white,
                         fontSize: 15,
                       ),
                     ),

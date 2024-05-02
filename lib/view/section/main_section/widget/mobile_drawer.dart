@@ -17,10 +17,9 @@ class MobileDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       child: Padding(
-        padding: EdgeInsets.only(top: 2.h),
+        padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height * 0.02),
         child: Column(
           children: [
             Center(
@@ -29,17 +28,34 @@ class MobileDrawer extends StatelessWidget {
             Divider(),
             Obx(
               () => ListTile(
-                leading: Icon(controller.isDark.value
-                    ? Icons.light_mode_outlined
-                    : Icons.dark_mode_outlined),
-                title: controller.isDark.value
+                leading: Icon(
+                    controller.isLight.value
+                        ? Icons.light_mode_outlined
+                        : Icons.dark_mode_outlined),
+                title: controller.isLight.value
                     ? Text("Light Mode")
                     : Text("Dark Mode"),
-                trailing: Switch.adaptive(
-                  value: controller.isDark.value,
-                  onChanged: (value) {
-                    controller.theme(value);
-                  },
+                trailing:  Obx(
+                      () => IconButton(
+                          onPressed: () {
+                            // controller.theme();
+
+                            controller.theme();
+                          },
+                          icon: Icon(
+                              controller.isLight.value
+                                  ? Icons.light_mode_outlined
+                                  : Icons.dark_mode_outlined)
+                        // Lottie.asset("assets/lotties/theme.json",
+                        //     controller: animationController, onLoaded: (composition) {
+                        //   if (!Get.isDarkMode) {
+                        //     animationController
+                        //       ..duration = composition.duration
+                        //       ..forward();
+                        //   } else {}
+                        // }, height: 50, width: 50
+                        // ),
+                      ),
                 ),
               ),
             ),
@@ -59,7 +75,7 @@ class MobileDrawer extends StatelessWidget {
                   ),
                 ),
             SizedBox(
-              height: 5.w,
+              height: MediaQuery.sizeOf(context).width * 0.05,
             ),
             ColorChangeButton(
               text: "Download Resume",

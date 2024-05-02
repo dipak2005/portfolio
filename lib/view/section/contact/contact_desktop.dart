@@ -22,7 +22,7 @@ class ContactDesktop extends StatelessWidget {
         children: [
           CustomTextHeading(text: "\nGet in Touch"),
           SizedBox(
-            height: 10.w,
+            height: MediaQuery.sizeOf(context).width * 0.01,
           ),
           Container(
             padding: EdgeInsets.all(MediaQuery.sizeOf(context).width * 0.05)
@@ -37,18 +37,23 @@ class ContactDesktop extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Image.asset(
+                      "assets/images/contactbird.png",
+                      height: 130,
+                      fit: BoxFit.fitHeight,
+                    ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           contactHeaDDing,
                           style: TextStyle(
-                              fontSize: 8.sp,
+                              fontSize: isFontSize(context, 40),
                               height: 1.3,
                               fontWeight: FontWeight.w600),
                         ),
                         SizedBox(
-                          height: 10.w,
+                          height: MediaQuery.sizeOf(context).width * 0.01,
                         ),
                         Text(
                           contactSubHeaDDing,
@@ -57,7 +62,7 @@ class ContactDesktop extends StatelessWidget {
                               fontWeight: FontWeight.w100),
                         ),
                         SizedBox(
-                          height: 2.w,
+                          height: MediaQuery.sizeOf(context).width * 0.02,
                         ),
                       ],
                     ),
@@ -69,7 +74,7 @@ class ContactDesktop extends StatelessWidget {
                         padding:
                             EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                         decoration: BoxDecoration(
-                          gradient: buttonGradiant,
+                          gradient: bluePurple,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Text(
@@ -88,29 +93,39 @@ class ContactDesktop extends StatelessWidget {
                   height: 1,
                 ),
                 SizedBox(
-                  height: 2.w,
+                  height: MediaQuery.sizeOf(context).width * 0.02,
                 ),
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  runSpacing: 40,
-                  children: contactUtils
-                      .asMap()
-                      .entries
-                      .map(
-                        (e) => IconButton(
-                          onPressed: () {
-                            launchUrl(Uri.parse(e.value.url));
-                          },
-                          icon: Image.network(
-                            e.value.icon,
-                            color: Theme.of(context).textColor,
-                          ),
-                          highlightColor: Colors.white,
-                          iconSize: 18,
-                        ),
-                      )
-                      .toList(),
-                )
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  // crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Wrap(
+                      alignment: WrapAlignment.center,
+                      runSpacing: 50,
+                      children: contactUtils
+                          .asMap()
+                          .entries
+                          .map(
+                            (e) => IconButton(
+                              onPressed: () {
+                                launchUrl(Uri.parse(e.value.url));
+                              },
+                              icon: Image.asset(
+                                e.value.icon, height: 40,
+                                // color: Theme.of(context).textColor,
+                              ),
+                              hoverColor: Colors.white,
+                              splashColor: Colors.white12,
+                              iconSize: 14,
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: MediaQuery.sizeOf(context).width * 0.02,
+                ),
               ],
             ),
           )

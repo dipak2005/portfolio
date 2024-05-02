@@ -10,6 +10,7 @@ import 'package:dipak_portfolio/model/appbar/appbar_tablet.dart';
 import 'package:dipak_portfolio/model/widget/arrow_top.dart';
 import 'package:dipak_portfolio/view/section/main_section/widget/body_page.dart';
 import 'package:dipak_portfolio/view/section/main_section/widget/mobile_drawer.dart';
+import 'package:flutter/cupertino.dart';
 
 import '../../../model/config/export.dart';
 
@@ -21,7 +22,8 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: MobileDrawer().key,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      key: controller.scaffoldKey,
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(120),
@@ -31,7 +33,7 @@ class MainPage extends StatelessWidget {
           desktop: AppbarDesktop(),
         ),
       ),
-      drawer: !Responsive.isDesktop(context) ? MobileDrawer() : null,
+      drawer: Responsive.isDesktop(context) ? null : MobileDrawer(),
       body: Stack(
         children: [
           Positioned(
@@ -42,7 +44,7 @@ class MainPage extends StatelessWidget {
               width: 166,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: skyBlueColor,
+                color: skyBlueColor.withOpacity(0.2),
               ),
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 200, sigmaY: 200),
@@ -62,7 +64,7 @@ class MainPage extends StatelessWidget {
               width: 200,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: primaryColor.withOpacity(0.5),
+                color: primaryColor.withOpacity(0.3),
               ),
               child: BackdropFilter(
                 filter: ImageFilter.blur(
@@ -77,16 +79,34 @@ class MainPage extends StatelessWidget {
               ),
             ),
           ),
-          if (!controller.isDark.value)
-          Align(
-            alignment: Alignment.center,
+          if (controller.isLight.value)
+            Align(
+              alignment: Alignment.center,
+              child: Image.asset(
+                opacity: const AlwaysStoppedAnimation<double>(0.3),
+                "assets/images/back.jpg",
+                fit: BoxFit.cover,
+                height: MediaQuery.sizeOf(context).height,
+                width: MediaQuery.sizeOf(context).width,
+              ),
+            ),
+          Positioned(
+            top: Responsive.isDesktop(context)
+                ? MediaQuery.sizeOf(context).width * 0.085
+                : MediaQuery.sizeOf(context).width * 0.3,
+            right: Responsive.isDesktop(context)
+                ? MediaQuery.sizeOf(context).width * 0.06
+                : MediaQuery.sizeOf(context).width * 0.07,
             child: Image.asset(
-              "assets/images/f3.png",
-              fit: BoxFit.cover,
+              "assets/images/bg2.png",
+              height: Responsive.isDesktop(context)
+                  ? MediaQuery.sizeOf(context).width * 0.2
+                  : MediaQuery.sizeOf(context).width * 0.1,
+              width: 200,
             ),
           ),
           BodyPage(),
-          // ArrowOnTop()
+          ArrowOnTop()
         ],
       ),
     );

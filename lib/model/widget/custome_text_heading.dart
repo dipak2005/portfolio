@@ -14,13 +14,13 @@ class CustomTextHeading extends StatelessWidget {
       mobile: Text(
         text,
         style: TextStyle(
-          fontSize: isFontSize(context, 56),
+          fontSize: isFontSize(context, 16),
         ),
       ),
       tablet: Text(
         text,
         style: TextStyle(
-          fontSize: isFontSize(context, 56),
+          fontSize: isFontSize(context, 36),
         ),
       ),
       desktop: Text(
@@ -46,7 +46,7 @@ class CustomSubHeading extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           color: Theme.of(context).textColor.withOpacity(0.6),
-          fontSize: isFontSize(context, 18),
+          fontSize: isFontSize(context, 14),
         ),
       ),
       tablet: Text(
@@ -54,7 +54,7 @@ class CustomSubHeading extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           color: Theme.of(context).textColor.withOpacity(0.6),
-          fontSize: isFontSize(context, 16),
+          fontSize: 16,
         ),
       ),
       desktop: Text(
@@ -62,7 +62,7 @@ class CustomSubHeading extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           color: Theme.of(context).textColor.withOpacity(0.6),
-          fontSize: isFontSize(context, 13),
+          fontSize: 20  ,
         ),
       ),
     );

@@ -2,10 +2,10 @@
 
 import 'package:dipak_portfolio/model/color_section/color_page.dart';
 import 'package:dipak_portfolio/model/config/export.dart';
-import 'package:dipak_portfolio/model/portfolio_theme/theme.dart';
 import 'package:dipak_portfolio/model/text_section/text_page.dart';
 import 'package:dipak_portfolio/model/util/contact_util.dart';
 import 'package:dipak_portfolio/model/widget/custome_text_heading.dart';
+import 'package:flutter/cupertino.dart';
 
 class ContactTablet extends StatelessWidget {
   const ContactTablet({super.key});
@@ -15,35 +15,51 @@ class ContactTablet extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 10.w,
+          height: MediaQuery.sizeOf(context).width * 0.01,
         ),
-        CustomTextHeading(text: contactHeaDDing),
+        FittedBox(fit: BoxFit.scaleDown,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                "assets/images/contactbird.png",
+                height: 100,
+                fit: BoxFit.fitHeight,
+              ),
+              CustomTextHeading(text: contactHeaDDing),
+            ],
+          ),
+        ),
         SizedBox(
-          height: 3.w,
+          height: MediaQuery.sizeOf(context).width * 0.03,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.w),
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.sizeOf(context).width * 0.01),
           child: CustomSubHeading(text: contactSubHeaDDing),
         ),
         SizedBox(
-          height: 5.w,
+          height: MediaQuery.sizeOf(context).width * 0.005,
         ),
         InkWell(
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
             decoration: BoxDecoration(
-              gradient: buttonGradiant,
+              gradient: bluePurple,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(
               " Get Started ",
               style: TextStyle(
-                  fontWeight: FontWeight.w500, fontSize: 18, color: blackColor),
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18,
+                  color: Colors.white),
             ),
           ),
         ),
         SizedBox(
-          height: 10.w,
+          height: MediaQuery.sizeOf(context).width * 0.01,
         ),
         Wrap(
           alignment: WrapAlignment.center,
@@ -56,9 +72,10 @@ class ContactTablet extends StatelessWidget {
                   onPressed: () {
                     launchUrl(Uri.parse(e.value.url));
                   },
-                  icon: Image.network(
+                  icon: Image.asset(
                     e.value.icon,
-                    color: Theme.of(context).textColor,
+                    height: 50,
+                    width: 50,
                   ),
                   highlightColor: Colors.white,
                   iconSize: 18,
@@ -67,7 +84,7 @@ class ContactTablet extends StatelessWidget {
               .toList(),
         ),
         SizedBox(
-          height: 5.w,
+          height: MediaQuery.sizeOf(context).width * 0.005,
         ),
         Container(
           color: Colors.white.withOpacity(0.2),

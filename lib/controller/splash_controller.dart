@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:dipak_portfolio/view/section/main_section/MainPage.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {

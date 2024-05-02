@@ -5,8 +5,7 @@ import 'package:dipak_portfolio/model/link_section/links.dart';
 import 'package:dipak_portfolio/model/responsive/responsive_font_sizer.dart';
 import 'package:dipak_portfolio/model/text_section/text_page.dart';
 import 'package:dipak_portfolio/model/widget/color_change_button.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+
 
 import '../../../model/config/export.dart';
 
@@ -23,25 +22,24 @@ class HomeMobile extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
+          FittedBox(
+            fit: BoxFit.cover,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
                   hello,
                   style: GoogleFonts.archivo().copyWith(
                     fontSize: isFontSize(context, 16),
                   ),
                 ),
-              ),
-              Image.asset(
-                "assets/gifs/hi.gif",
-                height: MediaQuery.sizeOf(context).width * 0.07,
-
-              ),
-            ],
+                Image.asset(
+                  "assets/gifs/hi.gif",
+                  height: MediaQuery.sizeOf(context).width * 0.07,
+                ),
+              ],
+            ),
           ),
           FittedBox(
             fit: BoxFit.scaleDown,
@@ -55,40 +53,45 @@ class HomeMobile extends StatelessWidget {
           SizedBox(
             height: MediaQuery.sizeOf(context).width * 0.02,
           ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text(
-                "A",
-                style: GoogleFonts.archivo().copyWith(
-                    fontSize: isFontSize(context, 18),
-                    fontWeight: FontWeight.w400),
-              ),
-              AnimatedTextKit(
-                animatedTexts: mobileList,
-                isRepeatingAnimation: true,
-                repeatForever: true,
-              )
-            ],
+          FittedBox(fit: BoxFit.cover,
+            child: Row(mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  "A",
+                  style: GoogleFonts.archivo().copyWith(
+                      fontSize: isFontSize(context, 18),
+                      fontWeight: FontWeight.w400),
+                ),
+                AnimatedTextKit(
+                  animatedTexts: mobileList,
+                  isRepeatingAnimation: true,
+                  repeatForever: true,
+                )
+              ],
+            ),
           ),
           SizedBox(
-            height: MediaQuery.sizeOf(context).width * 0.02,
+            height: MediaQuery.sizeOf(context).width * 0.04,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              ProfileAnimation(),
-              Padding(
-                padding: EdgeInsets.all(20),
-                child: ColorChangeButton(
-                  text: "Download Resume",
-                  onTap: () {
-                    var resume = Uri.parse(Apis().resume);
-                    launchUrl(resume);
-                  },
+          FittedBox(
+            fit: BoxFit.cover,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                ProfileAnimation(),
+                Padding(
+                  padding: EdgeInsets.all(20),
+                  child: ColorChangeButton(
+                    text: "Download Resume",
+                    onTap: () {
+                      var resume = Uri.parse(Apis().resume);
+                      launchUrl(resume);
+                    },
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           )
         ],
       ),

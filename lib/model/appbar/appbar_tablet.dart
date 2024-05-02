@@ -17,15 +17,22 @@ class TabletAppbar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(color: Theme.of(context).appBarColor),
       padding: EdgeInsets.symmetric(
-          horizontal: Responsive.isTablet(context) ? MediaQuery.sizeOf(context).width/8 : 10, vertical: 10),
+          horizontal: Responsive.isTablet(context)
+              ? MediaQuery.sizeOf(context).width / 8
+              : 10,
+          vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton.outlined(
+          IconButton.filledTonal(
             onPressed: () {
-              controller.key.currentState!.openDrawer();
+              controller.scaffoldKey.currentState?.openDrawer();
+              controller.isOpen.value = true;
             },
-            icon: Icon(Icons.menu_outlined,color: Colors.black,),
+            icon: Icon(
+              Icons.menu_outlined,
+              color: Colors.black,
+            ),
           ),
           AppbarLogo()
         ],
@@ -33,5 +40,3 @@ class TabletAppbar extends StatelessWidget {
     );
   }
 }
-
-

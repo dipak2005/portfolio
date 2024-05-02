@@ -1,4 +1,6 @@
 import 'package:dipak_portfolio/model/config/export.dart';
+import 'package:dipak_portfolio/model/portfolio_theme/theme.dart';
+import 'package:get/get.dart';
 
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -8,19 +10,21 @@ class MainPageController extends GetxController {
   GlobalKey<ScaffoldState> get key => scaffoldKey;
 
   RxBool isHover = false.obs;
+  RxBool isOpen = false.obs;
 
-  void hover(bool hover) {
-    isHover.value=!isHover.value;
-  }
+  // void hover(bool hover) {
+  //   isHover.value = !isHover.value;
+  // }
 
-  RxBool isDark = true.obs;
-late AnimationController  lottieController;
- void theme(bool theme) {
-    isDark.value = !isDark.value;
-    if(isDark.isTrue){
-      Get.changeTheme(ThemeData.dark());
-    }else{
-      Get.changeTheme(ThemeData.light());
+  RxBool isLight = false.obs;
+  late AnimationController lottieController;
+
+  void theme() {
+    isLight.value = !isLight.value;
+    if (Get.isDarkMode) {
+      Get.changeTheme(PortFolioTheme.lightTheme);
+    } else {
+      Get.changeTheme(PortFolioTheme.darkTheme);
     }
   }
 

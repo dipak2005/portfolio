@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../widget/custome_outline.dart';
 
-
 class ProfileAnimation extends StatefulWidget {
-  const ProfileAnimation({Key? key}) : super(key: key);
+  const ProfileAnimation({super.key});
 
   @override
   State<ProfileAnimation> createState() => _ProfileAnimationState();

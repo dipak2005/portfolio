@@ -17,26 +17,28 @@ class PortFolioMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomTextHeading(text: "\nprojects"),
+        CustomTextHeading(text: "\nProjects"),
         SizedBox(
-          height: 3.w,
+          height: MediaQuery.sizeOf(context).width * 0.03,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.w),
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.sizeOf(context).width * 0.01),
           child: CustomSubHeading(text: protfolioSubHeading),
         ),
         SizedBox(
-          height: 5.w,
+          height: MediaQuery.sizeOf(context).width * 0.05,
         ),
         CarouselSlider.builder(
           itemCount: projectUtilList.length,
           itemBuilder: (BuildContext context, int index, int realIndex) {
             return Padding(
               padding: EdgeInsets.symmetric(vertical: 15),
-              child: ProjectCard(projectUtil: projectUtilList[index]),
+              child: ProjectCard(projectUtil: projectUtilList[index], index: index,),
             );
           },
           options: CarouselOptions(
+            viewportFraction: 0.5,
               height: MediaQuery.sizeOf(context).height * 0.37,
               autoPlay: true,
               autoPlayInterval: Duration(seconds: 5),
@@ -46,7 +48,7 @@ class PortFolioMobile extends StatelessWidget {
               enableInfiniteScroll: true),
         ),
         SizedBox(
-          height: 3.w,
+          height: MediaQuery.sizeOf(context).width * 0.03,
         ),
         ColorChangeButton(
           text: "See More",

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class AppbarUtils {
   static const List<String> name = [
     "HOME",
+    "SKILL",
     "SERVICE",
     "WORKS",
-    "SKILL",
     "CONTACT",
   ];
 
