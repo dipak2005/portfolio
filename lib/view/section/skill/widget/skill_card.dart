@@ -5,12 +5,9 @@ import 'package:dipak_portfolio/model/config/export.dart';
 import 'package:dipak_portfolio/model/portfolio_theme/theme.dart';
 import 'package:dipak_portfolio/model/responsive/res_widget.dart';
 import 'package:dipak_portfolio/model/responsive/responsive_font_sizer.dart';
-import 'package:dipak_portfolio/model/util/service_util.dart';
-import 'package:dipak_portfolio/model/util/skill_util.dart';
-import 'package:dipak_portfolio/model/widget/custome_text_heading.dart';
-import 'package:flutter/material.dart';
 
 import '../../../../model/color_section/color_page.dart';
+import '../../../../model/util/skill_util.dart';
 
 class SkillCard extends StatefulWidget {
   final SkillUtil skillUtil;

@@ -4,9 +4,7 @@ import 'package:dipak_portfolio/controller/mainpage_controller.dart';
 import 'package:dipak_portfolio/model/appbar/appbar_logo.dart';
 import 'package:dipak_portfolio/model/portfolio_theme/theme.dart';
 import 'package:dipak_portfolio/model/util/appbar_util.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
+
 
 import 'appbar_ac_button.dart';
 import '../config/export.dart';
