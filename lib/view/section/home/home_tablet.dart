@@ -26,12 +26,9 @@ class HomeTablet extends StatelessWidget {
               height: MediaQuery.sizeOf(context).height * 0.1,
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              // Positioned(
-              //   left: MediaQuery.sizeOf(context).width * 0.01,
-              //   top: MediaQuery.sizeOf(context).height * 0.25,
-              //   child:
+
                 EntranceHii(
                   offset: Offset(0, 0),
                   delay: Duration(seconds: 1),

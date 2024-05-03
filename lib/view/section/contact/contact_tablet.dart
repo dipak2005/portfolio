@@ -78,7 +78,7 @@ class ContactTablet extends StatelessWidget {
                     width: 50,
                   ),
                   highlightColor: Colors.white,
-                  iconSize: 18,
+                  iconSize: 18,hoverColor: Colors.white,
                 ),
               )
               .toList(),

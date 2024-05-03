@@ -20,7 +20,8 @@ class ServicePageTablet extends StatelessWidget {
           height: MediaQuery.sizeOf(context).width * 0.03,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: MediaQuery.sizeOf(context).width*0.01),
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.sizeOf(context).width * 0.01),
           child: CustomSubHeading(text: servicesSubHeading),
         ),
         SizedBox(
@@ -35,12 +36,13 @@ class ServicePageTablet extends StatelessWidget {
             enlargeCenterPage: true,
             autoPlayCurve: Curves.fastOutSlowIn,
             autoPlayAnimationDuration: const Duration(milliseconds: 800),
-            enableInfiniteScroll: false,
+            enableInfiniteScroll: true,
           ),
           itemCount: serviceUtil.length,
           itemBuilder: (BuildContext context, int index, int realIndex) {
             return Padding(
-              padding: EdgeInsets.symmetric(vertical: MediaQuery.sizeOf(context).width*0.01),
+              padding: EdgeInsets.symmetric(
+                  vertical: MediaQuery.sizeOf(context).width * 0.01),
               child: ServiceCard(
                 index: index,
                 serviceUtil: serviceUtil[index],

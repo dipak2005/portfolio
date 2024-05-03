@@ -30,11 +30,11 @@ class MobileDrawer extends StatelessWidget {
               () => ListTile(
                 leading: Icon(
                     controller.isLight.value
-                        ? Icons.light_mode_outlined
-                        : Icons.dark_mode_outlined),
+                        ? Icons.dark_mode_outlined
+                        : Icons.light_mode_outlined),
                 title: controller.isLight.value
-                    ? Text("Light Mode")
-                    : Text("Dark Mode"),
+                    ? Text("Dark Mode")
+                    : Text("Light Mode"),
                 trailing:  Obx(
                       () => IconButton(
                           onPressed: () {
@@ -44,8 +44,8 @@ class MobileDrawer extends StatelessWidget {
                           },
                           icon: Icon(
                               controller.isLight.value
-                                  ? Icons.light_mode_outlined
-                                  : Icons.dark_mode_outlined)
+                                  ? Icons.dark_mode_outlined
+                                  : Icons.light_mode_outlined)
                         // Lottie.asset("assets/lotties/theme.json",
                         //     controller: animationController, onLoaded: (composition) {
                         //   if (!Get.isDarkMode) {

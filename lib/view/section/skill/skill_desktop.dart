@@ -18,11 +18,11 @@ class SkillDesktop extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.sizeOf(context).width*0.04,
+              height: MediaQuery.sizeOf(context).width * 0.04,
             ),
-            CustomTextHeading(text: "My Professional Skills"),
+            CustomTextHeading(text: "\nMy Skills"),
             SizedBox(
-              height: MediaQuery.sizeOf(context).width*0.04,
+              height: MediaQuery.sizeOf(context).width * 0.04,
             ),
             Wrap(
               spacing: MediaQuery.sizeOf(context).width * 0.03,

@@ -79,7 +79,7 @@ class MainPage extends StatelessWidget {
               ),
             ),
           ),
-          if (controller.isLight.value)
+          if (!controller.isLight.value)
             Align(
               alignment: Alignment.center,
               child: Image.asset(
@@ -92,7 +92,7 @@ class MainPage extends StatelessWidget {
             ),
           Positioned(
             top: Responsive.isDesktop(context)
-                ? MediaQuery.sizeOf(context).width * 0.085
+                ? MediaQuery.sizeOf(context).width * 0.05
                 : MediaQuery.sizeOf(context).width * 0.3,
             right: Responsive.isDesktop(context)
                 ? MediaQuery.sizeOf(context).width * 0.06

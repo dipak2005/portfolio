@@ -24,13 +24,14 @@ class _SkillCardState extends State<SkillCard>
   final SkillCardController controller = Get.put(SkillCardController());
   RxInt currentNumber = 0.obs;
   late final AnimationController numController;
-  late final AnimationController colorController;
+ late final curveAnim=CurvedAnimation(parent: numController, curve: Curves.linear);
+
 
   @override
   void initState() {
     numController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 5),
+      duration: Duration(seconds: 9),
     );
 
     final Animation<int> animation = IntTween(
@@ -43,8 +44,16 @@ class _SkillCardState extends State<SkillCard>
       });
     });
 
+
     numController.forward();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    numController.dispose();
+
+    super.dispose();
   }
 
   @override
@@ -65,7 +74,7 @@ class _SkillCardState extends State<SkillCard>
         () => Container(
           height: controller.hoverIndex.value == widget.index ? 150 : null,
           width: Responsive.isTablet(context) ? 400 : 300,
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+          padding: EdgeInsets.symmetric(vertical: 18, horizontal: 20),
           decoration: BoxDecoration(
             gradient: controller.hoverIndex.value == widget.index
                 ? bluePurple
@@ -79,29 +88,54 @@ class _SkillCardState extends State<SkillCard>
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CircleAvatar(
-                    backgroundColor: controller.hoverIndex.value == widget.index
-                        ? Colors.white
-                        : Colors.transparent,
-                    child: Image.asset(
-                      widget.skillUtil.logo,
-                      height: 30,
+             Responsive.isMobile(context)? FittedBox(
+               fit: BoxFit.cover,
+               child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: controller.hoverIndex.value == widget.index
+                          ? Colors.white
+                          : Colors.transparent,
+                      child: Image.asset(
+                        widget.skillUtil.logo,
+                        height: 30,
+                      ),
                     ),
-                  ),
-                  Text(
-                    widget.skillUtil.name,
-                    style: GoogleFonts.abhayaLibre().copyWith(
-                        fontSize: isFontSize(context, 20),
-                        color: controller.hoverIndex.value == widget.index
-                            ? Colors.white
-                            : Theme.of(context).textColor),
-                  )
-                ],
-              ),
+                    Text(
+                      widget.skillUtil.name,
+                      style: GoogleFonts.abhayaLibre().copyWith(
+                          fontSize: isFontSize(context, 20),
+                          color: controller.hoverIndex.value == widget.index
+                              ? Colors.white
+                              : Theme.of(context).textColor),
+                    )
+                  ],
+                ),
+             ):Row(
+               crossAxisAlignment: CrossAxisAlignment.center,
+               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               children: [
+                 CircleAvatar(
+                   backgroundColor: controller.hoverIndex.value == widget.index
+                       ? Colors.white
+                       : Colors.transparent,
+                   child: Image.asset(
+                     widget.skillUtil.logo,
+                     height: 30,
+                   ),
+                 ),
+                 Text(
+                   widget.skillUtil.name,
+                   style: GoogleFonts.abhayaLibre().copyWith(
+                       fontSize: isFontSize(context, 20),
+                       color: controller.hoverIndex.value == widget.index
+                           ? Colors.white
+                           : Theme.of(context).textColor),
+                 )
+               ],
+             ),
               controller.hoverIndex.value == widget.index
                   ? SizedBox(
                       height: MediaQuery.sizeOf(context).width * 0.01,
@@ -109,8 +143,9 @@ class _SkillCardState extends State<SkillCard>
                   : SizedBox.shrink(),
               LinearProgressIndicator(
                 borderRadius: BorderRadius.circular(20),
-                backgroundColor: Colors.white,
-                value: (currentNumber.value).toDouble(),
+                backgroundColor: Colors.white,semanticsLabel: currentNumber.value.toString(),
+                value: numController.value,color: Colors.blue,
+
               ),
               controller.hoverIndex.value == widget.index
                   ? SizedBox(

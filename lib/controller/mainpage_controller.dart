@@ -21,7 +21,7 @@ class MainPageController extends GetxController {
 
   void theme() {
     isLight.value = !isLight.value;
-    if (Get.isDarkMode) {
+    if (isLight.value) {
       Get.changeTheme(PortFolioTheme.lightTheme);
     } else {
       Get.changeTheme(PortFolioTheme.darkTheme);

@@ -37,12 +37,12 @@ class ProjectCard extends StatelessWidget {
           margin: EdgeInsets.symmetric(
               horizontal: MediaQuery.sizeOf(context).width * 0.01),
           width: Responsive.isDesktop(context)
-              ? MediaQuery.sizeOf(context).width * 0.2
+              ? MediaQuery.sizeOf(context).width * 0.3
               : MediaQuery.sizeOf(context).width * 0.5,
           height: MediaQuery.sizeOf(context).width * 0.18,
           decoration: BoxDecoration(
             gradient:
-                controller.hoverIndex.value == index ? bluePurple : grayBlack,
+                controller.hoverIndex.value == index ? bluePurple : Theme.of(context).serviceCard,
             borderRadius: BorderRadius.circular(10),
             boxShadow: controller.hoverIndex.value == index
                 ? [primaryColorShadow]
