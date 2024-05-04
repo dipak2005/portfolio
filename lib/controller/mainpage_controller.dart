@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
+import '../model/config/export.dart';
+
 class MainPageController extends GetxController {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -16,16 +18,24 @@ class MainPageController extends GetxController {
   //   isHover.value = !isHover.value;
   // }
 
-  RxBool isLight = false.obs;
+  RxBool isDarkMode = false.obs;
   late AnimationController lottieController;
 
+  ThemeData get currentTheme =>
+      isDarkMode.value ? PortFolioTheme.lightTheme : PortFolioTheme.darkTheme;
+
   void theme() {
-    isLight.value = !isLight.value;
-    if (isLight.value) {
-      Get.changeTheme(PortFolioTheme.lightTheme);
-    } else {
-      Get.changeTheme(PortFolioTheme.darkTheme);
-    }
+    isDarkMode.value = !isDarkMode.value;
+    Get.changeTheme(currentTheme);
+    // if (isLight.value) {
+    //   isLight.value = true;
+    //   Get.changeTheme(PortFolioTheme.lightTheme);
+    //   update();
+    // } else {
+    //   isLight.value = false;
+    //   Get.changeTheme(PortFolioTheme.darkTheme);
+    //   update();
+    // }
   }
 
   final ItemScrollController itemScrollController = ItemScrollController();

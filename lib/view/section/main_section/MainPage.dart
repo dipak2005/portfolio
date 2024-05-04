@@ -4,12 +4,14 @@ import 'dart:ui';
 
 import 'package:dipak_portfolio/controller/mainpage_controller.dart';
 import 'package:dipak_portfolio/model/color_section/color_page.dart';
+import 'package:dipak_portfolio/model/portfolio_theme/theme.dart';
 import 'package:dipak_portfolio/model/responsive/res_widget.dart';
 import 'package:dipak_portfolio/model/appbar/appbar_desktop.dart';
 import 'package:dipak_portfolio/model/appbar/appbar_tablet.dart';
 import 'package:dipak_portfolio/model/widget/arrow_top.dart';
 import 'package:dipak_portfolio/view/section/main_section/widget/body_page.dart';
 import 'package:dipak_portfolio/view/section/main_section/widget/mobile_drawer.dart';
+import 'package:dipak_portfolio/view/section/portfolio/portfolio.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../../model/config/export.dart';
@@ -22,7 +24,9 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Get.isDarkMode
+          ? PortFolioTheme.darkTheme.scaffoldBackgroundColor
+          : PortFolioTheme.lightTheme.scaffoldBackgroundColor,
       key: controller.scaffoldKey,
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
@@ -79,7 +83,7 @@ class MainPage extends StatelessWidget {
               ),
             ),
           ),
-          if (!controller.isLight.value)
+          if (!controller.isDarkMode.value)
             Align(
               alignment: Alignment.center,
               child: Image.asset(

@@ -52,23 +52,15 @@ class _AppbarDesktopState extends State<AppbarDesktop>
               turns: animationController,
               child: IconButton(
                   onPressed: () {
-                    // controller.theme();
+
                     animationController.forward(from: 0.1);
                     controller.theme();
                   },
                   icon: Icon(
-                      controller.isLight.value
+                      controller.isDarkMode.value
                           ? Icons.dark_mode_outlined
                           : Icons.light_mode_outlined)
-                  // Lottie.asset("assets/lotties/theme.json",
-                  //     controller: animationController, onLoaded: (composition) {
-                  //   if (!Get.isDarkMode) {
-                  //     animationController
-                  //       ..duration = composition.duration
-                  //       ..forward();
-                  //   } else {}
-                  // }, height: 50, width: 50
-                  // ),
+
                   ),
             ),
           ),

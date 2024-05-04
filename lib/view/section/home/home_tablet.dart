@@ -23,7 +23,7 @@ class HomeTablet extends StatelessWidget {
       child: Stack(
         children: [
           SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.1,
+              height: MediaQuery.sizeOf(context).height * 0.01,
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,

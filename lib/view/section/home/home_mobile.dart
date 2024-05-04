@@ -16,7 +16,7 @@ class HomeMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-          left: MediaQuery.sizeOf(context).width * 0.2,
+          left: MediaQuery.sizeOf(context).width * 0.1,
           top: MediaQuery.sizeOf(context).height * 0.2,
           right: MediaQuery.sizeOf(context).height * 0.03),
       child: Column(

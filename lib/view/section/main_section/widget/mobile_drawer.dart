@@ -29,10 +29,10 @@ class MobileDrawer extends StatelessWidget {
             Obx(
               () => ListTile(
                 leading: Icon(
-                    controller.isLight.value
+                    controller.isDarkMode.value
                         ? Icons.dark_mode_outlined
                         : Icons.light_mode_outlined),
-                title: controller.isLight.value
+                title: controller.isDarkMode.value
                     ? Text("Dark Mode")
                     : Text("Light Mode"),
                 trailing:  Obx(
@@ -43,7 +43,7 @@ class MobileDrawer extends StatelessWidget {
                             controller.theme();
                           },
                           icon: Icon(
-                              controller.isLight.value
+                              controller.isDarkMode.value
                                   ? Icons.dark_mode_outlined
                                   : Icons.light_mode_outlined)
                         // Lottie.asset("assets/lotties/theme.json",

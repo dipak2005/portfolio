@@ -16,7 +16,7 @@ class PortFolioTheme {
 
   static final lightTheme = ThemeData.light(
     useMaterial3: true,
-  ).copyWith(
+  ).copyWith(brightness: Brightness.light,
       primaryColor: primaryColor,
       scaffoldBackgroundColor: lightBgColor,
       visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -34,7 +34,7 @@ class PortFolioTheme {
     useMaterial3: true,
   ).copyWith(
     primaryColor: primaryColor,
-
+brightness: Brightness.dark,
     scaffoldBackgroundColor: blackColor,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     textButtonTheme: TextButtonThemeData(
